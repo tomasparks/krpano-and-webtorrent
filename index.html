@@ -9,6 +9,7 @@
 	<meta http-equiv="x-ua-compatible" content="IE=edge" />
 	<script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
 	<script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	 <style>
       #progressBar {
           height: 5px;
@@ -120,7 +121,7 @@
         function start() {
         if (krpano)
 		{
-           // var xml = '<xml><krpano><scene id="'.$id.'" "'.$name.'"><preview url="'.$PreviewBobUrl.'" /><image><cube url="'.$BlobUrl.'" /></image></scene></krpano>';
+           // var xml = '<xml><krpano><scene id="'.$id.'" "'+$name+'"><preview url="'+$PreviewBobUrl+'" /><image><cube url="'+$BlobUrl+'" /></image></scene></krpano>';
            // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
         }
         }

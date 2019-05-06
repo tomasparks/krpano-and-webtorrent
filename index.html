@@ -10,9 +10,6 @@
 	<script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js"></script>
 	<script src="https://momentjs.com/downloads/moment.min.js"></script>
 	 <style>
-      #output video {
-        width: 100%;
-      }
       #progressBar {
           height: 5px;
           width: 0%;
@@ -44,13 +41,8 @@
           background-color: #2a3749;
       }
       #status {
-
           font-size: 17px;
           padding: 5px;
-      }
-      a:link, a:visited {
-          color: #30a247;
-          text-decoration: none;
       }
     </style>
 </head>
@@ -61,11 +53,15 @@
 <div id="pano" style="width:auto;height:400px;">
 	<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
 	<script>
+	var krpano = null;
 		embedpano({swf:"./viewer/krpano.swf", xml:"./pano.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true});
+		function krpano_onready_callback(krpano_interface)
+{
+  krpano = krpano_onready_callback;
+}
 	</script>
 </div>
         <div id="progressBar"></div>
-        
          <div id="status">
         <div>
           <span class="show-leech">Downloading </span>
@@ -100,7 +96,7 @@
       var $downloadSpeed = document.querySelector('#downloadSpeed')
       
     
-      var torrentId = 'https://webtorrent.io/torrents/sintel.torrent'
+      var torrentId = 'https://webtorrent.io/torrents/sintel.torrent' // change to pano images
 
       var client = new WebTorrent()
    // window.client = client // for easier debugging
@@ -122,6 +118,11 @@
         
         
         function start() {
+        if (krpano)
+		{
+            var xml = '<xml><krpano><scene id="'.$id.'" "'.$name.'"><preview url="'.$PreviewBobUrl.'" /><image><cube url="'.$BlobUrl.'" /></image></scene></krpano>';
+            krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
+        }
         }
 
         // Statistics
@@ -149,6 +150,7 @@
           $downloadSpeed.innerHTML = prettyBytes(torrent.downloadSpeed) + '/s'
           $uploadSpeed.innerHTML = prettyBytes(torrent.uploadSpeed) + '/s'
         }
+       
         function onDone () {
           $body.className += ' is-seed'
           onProgress()

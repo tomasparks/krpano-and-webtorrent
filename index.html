@@ -88,7 +88,7 @@
     <div class="log"></div>
     
       <script>
-      var util = require('./util')
+     // var util = require('./util')
             // HTML elements
       var $body = document.body
       var $progressBar = document.querySelector('#progressBar')
@@ -103,9 +103,9 @@
       var torrentId = 'https://webtorrent.io/torrents/sintel.torrent'
 
       var client = new WebTorrent()
-    window.client = client // for easier debugging
-    client.on('warning', util.warning)
-    client.on('error', util.error)
+   // window.client = client // for easier debugging
+  //  client.on('warning', util.warning)
+   // client.on('error', util.error)
 
 
       // Download the torrent

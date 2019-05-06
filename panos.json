@@ -1,0 +1,6 @@
+scene {
+name: "b1", files {preview: "preview.jpg",thumb: "thumb.jpg"},
+name: "b2", files {preview: "preview.jpg",thumb: "thumb.jpg"},
+name: "a1", files {preview: "preview.jpg",thumb: "thumb.jpg"},
+name: "a3", files {preview: "preview.jpg",thumb: "thumb.jpg"},
+}

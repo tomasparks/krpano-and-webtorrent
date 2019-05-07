@@ -1,0 +1,21 @@
+{   "firstscene": "scene_mitte",
+	"scenes": [{
+			"id": "scene_mitte,
+			"files": {
+				"preview": "panos/mitte.tiles/preview.jpg"
+			}
+		},
+		{
+			"id": "scene_ecke",
+			"files": {
+				"preview": "panos/ecke.tiles/preview.jpg",
+			}
+		},
+		{
+			"id": "scene_glastuer",
+			"files": {
+				"preview": "panos/glastuer.tiles/preview.jpg",
+			}
+		}
+	]
+}

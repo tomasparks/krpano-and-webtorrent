@@ -13,16 +13,13 @@
       
 
 $(document).ready(function () {
-  $.getJSON("https://tomasparks.name/krpano-and-webtorrent/panos/panos.json", function(panodata){
+  $.getJSON(panoJsonUrl, function(panodata){
  console.log(panodata);
     });
 });
 
-      
-    
-      var torrentId = 'https://tomasparks.name/krpano-and-webtorrent/panos/panos.torrent' // change to pano images
-
-      var client = new WebTorrent()
+   
+      var client = new WebTorrent({'tracker': trackers})
    // window.client = client // for easier debugging
   //  client.on('warning', util.warning)
    // client.on('error', util.error)
@@ -31,7 +28,7 @@ $(document).ready(function () {
       // Download the torrent
       client.add(torrentId, function (torrent) {
       
-        torrent.addWebSeed("https://tomasparks.name/krpano-and-webtorrent/")
+        torrent.addWebSeed(webSeedUrl)
         
         torrent.on('ready', start)
         

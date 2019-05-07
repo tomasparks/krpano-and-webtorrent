@@ -1,0 +1,27 @@
+{   "firstscene": "b-1",
+	"scenes": [{
+			"id": "b-1",
+			"title":"Entrance",
+			"files": {
+				"preview": "preview.jpg",
+				"thumb": "thumb.jpg"
+			}
+		},
+		{
+			"id": "b-2",
+			"title":"Bedroom",
+			"files": {
+				"preview": "preview.jpg",
+				"thumb": "thumb.jpg"
+			}
+		},
+		{
+			"id": "a-1",
+			"title": "Livingroom / Kitchen",
+			"files": {
+				"preview": "preview.jpg",
+				"thumb": "thumb.jpg"
+			}
+		}
+	]
+}

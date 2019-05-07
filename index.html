@@ -98,7 +98,11 @@
       
       
 
-$.getJSON('https://tomasparks.name/krpano-and-webtorrent/panos/panos.json', function (data) {console.log(data);}
+$(document).ready(function () {
+  $.getJSON("https://tomasparks.name/krpano-and-webtorrent/panos/panos.json", function(result){
+ console.log(data);
+    });
+});
 
       
     

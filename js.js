@@ -10,7 +10,7 @@
       var $uploadSpeed = document.querySelector('#uploadSpeed')
       var $downloadSpeed = document.querySelector('#downloadSpeed')
       
-      
+     var firstLoop = true; 
 
 $(document).ready(function () {
   $.getJSON(panoJsonUrl, function(panodata){
@@ -61,6 +61,7 @@ xml = xml +'<down url="'+BlobUrlFromUrl(pano.down, rootUrl)+'"/>'
            xml = xml + '</image></scene></krpano>';
             console.log(xml);
            // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
+           firstLoop = false;
         }
         }
         }
@@ -81,7 +82,7 @@ xml = xml +'<down url="'+BlobUrlFromUrl(pano.down, rootUrl)+'"/>'
            
         // Statistics
         function onProgress () {
-            start();
+           if (firstLoop) {start();}
             
           // Peers
           $numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')

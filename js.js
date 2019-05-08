@@ -71,16 +71,16 @@ var client = new WebTorrent()
         
         function BlobUrlFromUrl(url,rootUrl) {
             torrent.files.forEach(function (file) {
-              if ((file.path) == (rootUrl+'/'+url)) {console.log(rootUrl+'/'+url+'=='+file.path+' TRUE');
+              if ((file.path) == (rootUrl+'/'+url)) {
+                 console.log(rootUrl+'/'+url+'=='+file.path+' TRUE');
+                 file.getBlobURL(function (err, url) {
+                        if (err) throw err
+                        console.log(rootUrl+'/'+url+' == '+url);
+                        return url;
             }
-            })
-            //if ((file.path+file.name) == (rootUrl+url)) {
-              //   file.getBlobURL(function (err, url) {
-                //    if (err) throw err
-                 //       return url;})
-                //}
-            //}
-         }
+            }
+            }
+            }
         
            
         // Statistics

@@ -30,12 +30,6 @@ var client = new WebTorrent()
       
         torrent.addWebSeed(webSeedUrl)
         
- torrent.on('noPeers', () => {
-    console.log('noPeers');
-    torrent.files.forEach(function(file) {
-		console.log(file.name);
-    });
-});
 torrent.on('metadata', () => {
     console.log('metadata');
     torrent.files.forEach(function(file) {
@@ -44,24 +38,6 @@ torrent.on('metadata', () => {
 });
 torrent.on('ready', () => {
     console.log('ready');
-    torrent.files.forEach(function(file) {
-		console.log(file.name);
-    });
-});
-torrent.on('warning', () => {
-    console.log('warning');
-    torrent.files.forEach(function(file) {
-		console.log(file.name);
-    });
-});
-torrent.on('error', () => {
-    console.log('error');
-    torrent.files.forEach(function(file) {
-		console.log(file.name);
-    });
-});
-torrent.on('done', () => {
-    console.log('done');
     torrent.files.forEach(function(file) {
 		console.log(file.name);
     });

@@ -78,7 +78,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
             log('file.getBlobURL(): type: '+type);
             log('file.getBlobURL() '+burl);
             var link = document.createElement(type)
-            link.setAttribute('src', burl)document.querySelector('.xml').appendChild(link);
+            link.setAttribute('src', burl);document.querySelector('.xml').appendChild(link);
             });
 
            }

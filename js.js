@@ -57,7 +57,7 @@ $(document).ready(function () {
 //<up url="tour.data/aussen.tiles/pano_u.jpg"/>
 //<down url="tour.data/aussen.tiles/pano_d.jpg"/>
            xml = xml + '</image></scene></krpano>';
-           
+            console.log('start(): xml: '+xml+'\n');
            // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
         }
         }

@@ -30,28 +30,12 @@ var client = new WebTorrent()
       
         torrent.addWebSeed(webSeedUrl)
         
-torrent.on('metadata', () => {
-    console.log('metadata');
-    torrent.files.forEach(function(file) {
-		console.log(file.name);
-    });
-});
-torrent.on('ready', () => {
-    console.log('ready');
-    torrent.files.forEach(function(file) {
-		console.log(file.name);
-    });
-});
         
    // Trigger statistics refresh
         torrent.on('done', onDone)
         setInterval(onProgress, 500)
         onProgress()
-        
-        //function infoHashFunction() {console.log('infoHash');}
-        //function metadataFunction() {console.log('metadata');}
-        //function readyFunction() {console.log('ready');}
-        
+                
         function start() {
         console.log('krpano is ready?');
         if (krpano)
@@ -85,6 +69,7 @@ torrent.on('ready', () => {
 
         // Statistics
         function onProgress () {
+            start();
           // Peers
           $numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')
 

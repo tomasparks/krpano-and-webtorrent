@@ -69,7 +69,7 @@ var client = new WebTorrent()
 
         // Statistics
         function onProgress () {
-            torrent.files.forEach(function(file) console.log(file.name);});
+            start();
             
           // Peers
           $numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')

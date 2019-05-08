@@ -75,7 +75,7 @@ function BlobUrlFromUrl(url,rootUrl) {
             if (err) return log(err.message);
             log('file.getBlobURL() '+burl);
             var link = document.createElement('left')
-            link.src = burl
+            link.setAttribute('src', url)
             document.querySelector('.xml').appendChild(link);
             });
 

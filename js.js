@@ -12,7 +12,10 @@
       
      var firstLoop = true; 
 
-$(document).ready(function () {$.getJSON(panoJsonUrl, function(panodata){console.log(panodata);});});
+$(document).ready(function () {$.getJSON(panoJsonUrl, function(panodata){
+console.log(panodata);
+panodata = panodata
+});});
 
    
 var client = new WebTorrent()

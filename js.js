@@ -74,11 +74,9 @@ function BlobUrlFromUrl(url,rootUrl) {
             file.getBlobURL(function (err, burl) {
             if (err) return log(err.message);
             log('file.getBlobURL() '+burl);
-            var a = document.createElement('a')
-            a.download = file.name
-            a.href = burl
-            a.textContent = 'Download ' + file.name
-            document.querySelector('.log').appendChild(a)
+            var link = document.createElement('left')
+            link.src = burl
+            document.querySelector('.xml').appendChild(link);
             });
 
            }

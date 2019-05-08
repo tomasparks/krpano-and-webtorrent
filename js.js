@@ -78,7 +78,7 @@ function BlobUrlFromUrl(url,rootUrl) {
             a.download = file.name
             a.href = burl
             a.textContent = 'Download ' + file.name
-            document.body.appendChild(a)
+            document.querySelector('.log').appendChild(a)
             });
 
            }

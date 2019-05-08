@@ -50,14 +50,14 @@ var client = new WebTorrent()
 		               panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
 		               console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
 		                var xml = '<xml><krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
-                        xml = xml + '<preview url="' + BlobUrlFromUrl(files.preview, rootUrl,preview) + '" />'
+                        BlobUrlFromUrl(files.preview, rootUrl, 'preview')
                         xml = xml + '<image>'
-                        xml = xml + '<left url="' + BlobUrlFromUrl(files.left, rootUrl,left) + '"/>'
-                        xml = xml + '<front url="' + BlobUrlFromUrl(files.front, rootUrl,front) + '"/>'
-                        xml = xml + '<right url="' + BlobUrlFromUrl(files.right, rootUrl,right) + '"/>'
-                        xml = xml + '<back url="' + BlobUrlFromUrl(files.back, rootUrl,back) + '"/>'
-                        xml = xml + '<up url="' + BlobUrlFromUrl(files.up, rootUrl,up) + '"/>'
-                        xml = xml + '<down url="' + BlobUrlFromUrl(files.down, rootUrl,down) + '"/>'
+                        BlobUrlFromUrl(files.left, rootUrl,'left')
+                        BlobUrlFromUrl(files.front, rootUrl,'front')
+                        BlobUrlFromUrl(files.right, rootUrl,'right')
+                        BlobUrlFromUrl(files.back, rootUrl,'back')
+                        BlobUrlFromUrl(files.up, rootUrl,'up')
+                        BlobUrlFromUrl(files.down, rootUrl,'down')
                         xml = xml + '</image></scene></krpano>';
                         console.log(xml);
                         // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")

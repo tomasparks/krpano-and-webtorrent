@@ -49,7 +49,6 @@ var client = new WebTorrent()
 		                //}
 		               panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
 		               console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
-		               
 		                var xml = '<xml><krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
                         xml = xml + '<preview url="' + BlobUrlFromUrl(files.preview, rootUrl) + '" />'
                         xml = xml + '<image>'
@@ -72,8 +71,13 @@ var client = new WebTorrent()
 function BlobUrlFromUrl(url,rootUrl) {
     torrent.files.forEach(function (file) {
         if ((file.path) == (rootUrl+'/'+url)) {
-            file.getBlobURL(function (err, bloburl) {if (err) return log(err.message);log('file.getBlobURL() '+bloburl);success: bloburl;});
-           // log('torrent.files(): '+ bloburl);
+            file.getBlobURL(function (err, bloburl) {if (err) return log(err.message);
+            log('file.getBlobURL() '+bloburl)});
+            var a = document.createElement('a')
+            a.download = file.name
+            a.href = url
+            a.textContent = 'Download ' + file.name
+            document.body.appendChild(a)
            }
         })
 }

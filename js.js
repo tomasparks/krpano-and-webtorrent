@@ -38,30 +38,28 @@ var client = new WebTorrent()
                 
         function start() {
               console.log('krpano is ready?');
-            if (krpano) {
-            console.log('krpano ready');   
-		    if (panodata) {
-		    // console.log(panodata);
-		    
-		 firstscene = panodata['firstscene'];
-		// pano = panodata['scenes'] with 'id' = firstscene
-		//for (i = 1 to len(panodata.scenes)) {
-		 //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
-		//}
-		
-           var xml = '<xml><krpano><scene id="'+pano.id+'" >'
-           xml = xml + '<preview url="'+BlobUrlFromUrl(pano.preview, rootUrl)+'" />'
-           xml = xml + '<image>'
-           xml = xml + '<left url="'+BlobUrlFromUrl(pano.left, rootUrl)+'"/>'
-xml = xml +'<front url="'+BlobUrlFromUrl(pano.front, rootUrl)+'"/>'
-xml = xml +'<right url="'+BlobUrlFromUrl(pano.right, rootUrl)+'"/>'
-xml = xml +'<back url="'+BlobUrlFromUrl(pano.back, rootUrl)+'"/>'
-xml = xml +'<up url="'+BlobUrlFromUrl(pano.up, rootUrl)+'"/>'
-xml = xml +'<down url="'+BlobUrlFromUrl(pano.down, rootUrl)+'"/>'
-           xml = xml + '</image></scene></krpano>';
-            console.log(xml);
-           // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
-           firstLoop = false;
+              if (krpano) {
+                    console.log('krpano ready');   
+		            if (panodata) {
+		                console.log(panodata);
+		                firstscene = panodata['firstscene'];
+		                // pano = panodata['scenes'] with 'id' = firstscene
+		                //for (i = 1 to len(panodata.scenes)) {
+		                //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
+		                //}
+                        var xml = '<xml><krpano><scene id="'+pano.id+'" >'
+                        xml = xml + '<preview url="'+BlobUrlFromUrl(pano.preview, rootUrl)+'" />'
+                        xml = xml + '<image>'
+                        xml = xml + '<left url="'+BlobUrlFromUrl(pano.left, rootUrl)+'"/>'
+                        xml = xml +'<front url="'+BlobUrlFromUrl(pano.front, rootUrl)+'"/>'
+                        xml = xml +'<right url="'+BlobUrlFromUrl(pano.right, rootUrl)+'"/>'
+                        xml = xml +'<back url="'+BlobUrlFromUrl(pano.back, rootUrl)+'"/>'
+                        xml = xml +'<up url="'+BlobUrlFromUrl(pano.up, rootUrl)+'"/>'
+                        xml = xml +'<down url="'+BlobUrlFromUrl(pano.down, rootUrl)+'"/>'
+                        xml = xml + '</image></scene></krpano>';
+                        console.log(xml);
+                        // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
+                        firstLoop = false;
         }
         }
         }

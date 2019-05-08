@@ -41,6 +41,7 @@ $(document).ready(function () {
         function start() {
         if (krpano)
 		{
+		
 		    if (panodata) {
 		 firstscene = panodata['firstscene'];
 		// pano = panodata['scenes'] with 'id' = firstscene

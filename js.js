@@ -76,7 +76,8 @@ function BlobUrlFromUrl(url,rootUrl) {
             console.log(rootUrl+'/'+url+'=='+file.path+' TRUE');
             file.getBlobURL(function (err, url) {
                 if (err) throw err
-                console.log(rootUrl+'/'+url+' == '+url);
+                console.log(url);
+                return url;
                 })
             }
         })

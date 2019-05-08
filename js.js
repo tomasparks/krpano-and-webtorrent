@@ -47,9 +47,9 @@ var client = new WebTorrent()
 		                //for (i = 0; i < fLen; i++) {
 		                //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
 		                //}
-		               pano = panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){console.log(scene.id+'=='+firstscene);return scene;}})
-		                
-                        var xml = '<xml><krpano><scene id="' + pano.id + '" name="' + pano.id + '" >'
+		               panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
+		               console.log(scene.id+'=='+firstscene); pano=scene;
+		                var xml = '<xml><krpano><scene id="' + pano.id + '" name="' + pano.id + '" >'
                         xml = xml + '<preview url="' + BlobUrlFromUrl(pano.preview, rootUrl) + '" />'
                         xml = xml + '<image>'
                         xml = xml + '<left url="' + BlobUrlFromUrl(pano.left, rootUrl) + '"/>'
@@ -61,7 +61,9 @@ var client = new WebTorrent()
                         xml = xml + '</image></scene></krpano>';
                         console.log(xml);
                         // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
-	            firstLoop = false;
+	            firstLoop = false;}})
+		                
+
 		            }
 		      }
 		      }

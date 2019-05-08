@@ -74,10 +74,20 @@ function BlobUrlFromUrl(url,rootUrl, type) {
         if ((file.path) == (rootUrl+'/'+url)) {
         switch(type) {
              case 'preview':
-                file.getBlobURL(function (err, burl, type) {if (err) return log(err.message);var link = document.createElement('preview');link.setAttribute('src', burl);document.querySelector('.xml').appendChild(link);});
+                file.getBlobURL(function (err, burl, type) {
+                if (err) return log(err.message);
+                var link = document.createElement('preview');
+                link.setAttribute('src', burl);
+                document.querySelector('.xml').appendChild(link);
+                });
                 break;
             case 'left':
-                file.getBlobURL(function (err, burl, type) {if (err) return log(err.message);var link = document.createElement('left');link.setAttribute('src', burl);document.querySelector('.xml').appendChild(link);});
+                file.getBlobURL(function (err, burl, type) {
+                if (err) return log(err.message);
+                var link = document.createElement('left');
+                link.setAttribute('src', burl);
+                document.querySelector('.xml').appendChild(link);
+                });
                 break;
         }
            }

@@ -33,7 +33,7 @@ var client = new WebTorrent()
         onProgress()
                 
         function start() {
-              //console.log('krpano is ready?');
+              console.log('firstLoop'+firstLoop);
               if (krpano) {console.log('krpano ready');  
 		        if (panodata) {
 		            console.log(panodata);
@@ -77,6 +77,7 @@ var client = new WebTorrent()
            
         // Statistics
         function onProgress () {
+                      console.log('firstLoop'+firstLoop);
            if (firstLoop) {start();}
             
           // Peers

@@ -71,7 +71,7 @@ var client = new WebTorrent()
         
         function BlobUrlFromUrl(url,rootUrl) {
             torrent.files.forEach(function (file) {
-            console.log(''+url+'=='+file.path+'');
+            console.log(rootUrl+'/'+url+'=='+file.path+'');
             
             })
             //if ((file.path+file.name) == (rootUrl+url)) {

@@ -33,7 +33,7 @@ var client = new WebTorrent()
         onProgress()
                 
         function start() {
-              console.log('start(): firstLoop: '+firstLoop);
+              console.log('start():\n firstLoop: '+firstLoop+'krpano: '+krpano);
               if (krpano) {
                 console.log('start(): krpano ready');  
                 console.log('start(): panodata: ')

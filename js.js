@@ -73,7 +73,8 @@ function BlobUrlFromUrl(url,rootUrl) {
     torrent.files.forEach(function (file) {
         if ((file.path) == (rootUrl+'/'+url)) {
             file.getBlobURL(function (err, bloburl) {if (err) return log(err.message);log('file.getBlobURL() '+bloburl);success: bloburl;});
-            log('torrent.files(): '+ bloburl);}
+           // log('torrent.files(): '+ bloburl);
+           }
         })
 }
 //                 file.getBlobURL(function (err, url) {

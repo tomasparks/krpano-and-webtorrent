@@ -77,10 +77,9 @@ function BlobUrlFromUrl(url,rootUrl) {
             file.getBlobURL(function (err, url) {
                 if (err) throw err
                 console.log(rootUrl+'/'+url+' == '+url);
-                }
+                })
             }
-        }
-    )
+        })
 }
 //                 file.getBlobURL(function (err, url) {
   //                      if (err) throw err

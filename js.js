@@ -72,8 +72,8 @@ var client = new WebTorrent()
 function BlobUrlFromUrl(url,rootUrl) {
     torrent.files.forEach(function (file) {
         if ((file.path) == (rootUrl+'/'+url)) {
-            file.getBlobURL(function (err, url) {if (err) return log(err.message);log(url);success: url;});
-            log(url);}
+            file.getBlobURL(function (err, url) {if (err) return log(err.message);log('file.getBlobURL() '+url);success: url;});
+            log('torrent.files(): '+ url);}
         })
 }
 //                 file.getBlobURL(function (err, url) {

@@ -71,13 +71,13 @@ var client = new WebTorrent()
         
 function BlobUrlFromUrl(url,rootUrl) {
     torrent.files.forEach(function (file) {
-       // console.log(file.path+'?'); 
         if ((file.path) == (rootUrl+'/'+url)) {
             console.log(rootUrl+'/'+url+'=='+file.path+' TRUE');
             file.getBlobURL(function (err, url) {
                 if (err) return log(err.message)
-            log('File done.')
-            log('<a href="' + url + '">Download full file: ' + file.name + '</a>')
+                    log('File done.')
+                    log('<a href="' + url + '">Download full file: ' + file.name + '</a>')
+                    return url;
                 })
                 
             }

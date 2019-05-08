@@ -45,7 +45,9 @@ var client = new WebTorrent()
 		    if (panodata) {
 		 firstscene = panodata['firstscene'];
 		// pano = panodata['scenes'] with 'id' = firstscene
-		
+		for (i = 1 to len(panodata.scenes)) {
+		    if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
+		}
 		
            var xml = '<xml><krpano><scene id="'+pano.id+'" >'
            xml = xml + '<preview url="'+BlobUrlFromUrl(pano.preview, rootUrl)+'" />'
@@ -64,8 +66,17 @@ xml = xml +'<down url="'+BlobUrlFromUrl(pano.down, rootUrl)+'"/>'
         }
         
         function BlobUrlFromUrl(url,rootUrl) {
-        }
-
+            torrent.files.forEach(function (file) {
+            console.log(file.path+file.name);
+            if ((file.path+file.name) == (rootUrl+url)) {
+                 file.getBlobURL(function (err, url) {
+                    if (err) throw err
+                        return url;})
+                }
+            }
+         }
+        
+           
         // Statistics
         function onProgress () {
             start();

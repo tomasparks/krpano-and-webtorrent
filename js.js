@@ -75,10 +75,11 @@ function BlobUrlFromUrl(url,rootUrl) {
         if ((file.path) == (rootUrl+'/'+url)) {
             console.log(rootUrl+'/'+url+'=='+file.path+' TRUE');
             file.getBlobURL(function (err, url) {
-                if (err) throw err
-                console.log(url);
-                return url;
+                if (err) return log(err.message)
+            log('File done.')
+            log('<a href="' + url + '">Download full file: ' + file.name + '</a>')
                 })
+                
             }
         })
 }
@@ -132,4 +133,10 @@ function BlobUrlFromUrl(url,rootUrl) {
         num = Number((num / Math.pow(1000, exponent)).toFixed(2))
         unit = units[exponent]
         return (neg ? '-' : '') + num + ' ' + unit
+      }
+      
+            function log (str) {
+        var p = document.createElement('p')
+        p.innerHTML = str
+        document.querySelector('.log').appendChild(p)
       }

@@ -81,7 +81,6 @@ var client = new WebTorrent()
            
         // Statistics
         function onProgress () {
-                      console.log('firstLoop'+firstLoop);
            if (firstLoop) {start();}
             
           // Peers

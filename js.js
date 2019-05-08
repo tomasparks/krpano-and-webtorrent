@@ -66,7 +66,10 @@ xml = xml +'<down url="'+BlobUrlFromUrl(pano.down, rootUrl)+'"/>'
         }
         
         function BlobUrlFromUrl(url,rootUrl) {
-            torrent.files.forEach(function (file) {console.log(''+file.path+''+file.name+'');})
+            torrent.files.forEach(function (file) {
+            console.log(''+url+'=='+file.path+'');
+            
+            })
             //if ((file.path+file.name) == (rootUrl+url)) {
               //   file.getBlobURL(function (err, url) {
                 //    if (err) throw err

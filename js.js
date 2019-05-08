@@ -43,7 +43,7 @@ var client = new WebTorrent()
 		{
 		           
 		    if (panodata) {
-		     console.log(panodata);
+		    // console.log(panodata);
 		    
 		 firstscene = panodata['firstscene'];
 		// pano = panodata['scenes'] with 'id' = firstscene

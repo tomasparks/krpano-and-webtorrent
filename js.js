@@ -39,9 +39,7 @@ var client = new WebTorrent()
         function start() {
         console.log('krpano is ready?');
         if (krpano)
-                console.log('krpano ready');
-		{
-		           
+            console.log('krpano ready');   
 		    if (panodata) {
 		    // console.log(panodata);
 		    

@@ -51,12 +51,11 @@ var client = new WebTorrent()
            xml = xml + '<preview url="'+BlobUrlFromUrl(pano.preview, rootUrl)+'" />'
            xml = xml + '<image>'
            xml = xml + '<left url="'+BlobUrlFromUrl(pano.left, rootUrl)+'"/>'
-
-//<front url="tour.data/aussen.tiles/pano_f.jpg"/>
-//<right url="tour.data/aussen.tiles/pano_r.jpg"/>
-//<back url="tour.data/aussen.tiles/pano_b.jpg"/>
-//<up url="tour.data/aussen.tiles/pano_u.jpg"/>
-//<down url="tour.data/aussen.tiles/pano_d.jpg"/>
+xml = xml +'<front url="'+BlobUrlFromUrl(pano.front, rootUrl)+'"/>'
+xml = xml +'<right url="'+BlobUrlFromUrl(pano.right, rootUrl)+'"/>'
+xml = xml +'<back url="'+BlobUrlFromUrl(pano.back, rootUrl)+'"/>'
+xml = xml +'<up url="'+BlobUrlFromUrl(pano.up, rootUrl)+'"/>'
+xml = xml +'<down url="'+BlobUrlFromUrl(pano.down, rootUrl)+'"/>'
            xml = xml + '</image></scene></krpano>';
             console.log(xml);
            // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")

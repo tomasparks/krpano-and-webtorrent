@@ -1,6 +1,6 @@
      // var util = require('./util')
             // HTML elements
-      var panodata = {};
+      var panodata = false;
       var $body = document.body
       var $progressBar = document.querySelector('#progressBar')
       var $numPeers = document.querySelector('#numPeers')

@@ -50,7 +50,7 @@ var client = new WebTorrent()
 		               panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
 		               console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
 		               
-		                var xml = '<xml><krpano><scene id="' + pano.id + '" name="' + pano.name + '" >'
+		                var xml = '<xml><krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
                         xml = xml + '<preview url="' + BlobUrlFromUrl(files.preview, rootUrl) + '" />'
                         xml = xml + '<image>'
                         xml = xml + '<left url="' + BlobUrlFromUrl(files.left, rootUrl) + '"/>'

@@ -1,6 +1,6 @@
      // var util = require('./util')
             // HTML elements
-      //var panodata = {};
+      var panodata = {};
       var $body = document.body
       var $progressBar = document.querySelector('#progressBar')
       var $numPeers = document.querySelector('#numPeers')
@@ -35,7 +35,7 @@ var client = new WebTorrent()
         function start() {
               console.log('krpano is ready?');
               if (krpano) {console.log('krpano ready');  
-		        if (panodata) {
+		//        if (panodata) {
 		            console.log(panodata);
 		            firstLoop = false;
 		            }

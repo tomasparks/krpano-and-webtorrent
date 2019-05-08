@@ -30,15 +30,18 @@ $(document).ready(function () {
       
         torrent.addWebSeed(webSeedUrl)
         
-        torrent.on('infoHash', console.log('infoHash') )
-        torrent.on('metadata', console.log('metadata') )
-        torrent.on('ready', console.log('ready') )
+        torrent.on('infoHash', infoHash )
+        torrent.on('metadata', metadata )
+        torrent.on('ready', ready )
         
    // Trigger statistics refresh
         torrent.on('done', onDone)
         setInterval(onProgress, 500)
         onProgress()
         
+        function infoHash() {console.log('infoHash');}
+        function metadata() {console.log('metadata');}
+                function ready() {console.log('ready');}
         
         function start() {
         console.log('krpano is ready?');

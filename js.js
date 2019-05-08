@@ -45,9 +45,9 @@ var client = new WebTorrent()
 		    if (panodata) {
 		 firstscene = panodata['firstscene'];
 		// pano = panodata['scenes'] with 'id' = firstscene
-		for (i = 1 to len(panodata.scenes)) {
-		    if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
-		}
+		//for (i = 1 to len(panodata.scenes)) {
+		 //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
+		//}
 		
            var xml = '<xml><krpano><scene id="'+pano.id+'" >'
            xml = xml + '<preview url="'+BlobUrlFromUrl(pano.preview, rootUrl)+'" />'

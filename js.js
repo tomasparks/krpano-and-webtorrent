@@ -33,12 +33,13 @@ var client = new WebTorrent()
         onProgress()
                 
         function start() {
-              console.log('krpano is ready?');
-              if (krpano) {console.log('krpano ready');  
+              //console.log('krpano is ready?');
+              if (krpano) {//console.log('krpano ready');  
 		        if (panodata) {
 		            console.log(panodata);
 		            firstLoop = false;
 		            }
+		      }
 		      }
 		      
 		      /*          firstscene = panodata['firstscene'];
@@ -60,8 +61,8 @@ var client = new WebTorrent()
                         // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
                         firstLoop = false;
         }
-        }*/
         }
+        }*/
         
         function BlobUrlFromUrl(url,rootUrl) {
             torrent.files.forEach(function (file) {

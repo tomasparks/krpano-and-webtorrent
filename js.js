@@ -50,14 +50,14 @@ var client = new WebTorrent()
 		               panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
 		               console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
 		                var xml = '<xml><krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
-                        xml = xml + '<preview url="' + BlobUrlFromUrl(files.preview, rootUrl) + '" />'
+                        xml = xml + '<preview url="' + BlobUrlFromUrl(files.preview, rootUrl,preview) + '" />'
                         xml = xml + '<image>'
-                        xml = xml + '<left url="' + BlobUrlFromUrl(files.left, rootUrl) + '"/>'
-                        xml = xml + '<front url="' + BlobUrlFromUrl(files.front, rootUrl) + '"/>'
-                        xml = xml + '<right url="' + BlobUrlFromUrl(files.right, rootUrl) + '"/>'
-                        xml = xml + '<back url="' + BlobUrlFromUrl(files.back, rootUrl) + '"/>'
-                        xml = xml + '<up url="' + BlobUrlFromUrl(files.up, rootUrl) + '"/>'
-                        xml = xml + '<down url="' + BlobUrlFromUrl(files.down, rootUrl) + '"/>'
+                        xml = xml + '<left url="' + BlobUrlFromUrl(files.left, rootUrl,left) + '"/>'
+                        xml = xml + '<front url="' + BlobUrlFromUrl(files.front, rootUrl,front) + '"/>'
+                        xml = xml + '<right url="' + BlobUrlFromUrl(files.right, rootUrl,right) + '"/>'
+                        xml = xml + '<back url="' + BlobUrlFromUrl(files.back, rootUrl,back) + '"/>'
+                        xml = xml + '<up url="' + BlobUrlFromUrl(files.up, rootUrl,up) + '"/>'
+                        xml = xml + '<down url="' + BlobUrlFromUrl(files.down, rootUrl,down) + '"/>'
                         xml = xml + '</image></scene></krpano>';
                         console.log(xml);
                         // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
@@ -68,14 +68,15 @@ var client = new WebTorrent()
 		      }
 		      }
         
-function BlobUrlFromUrl(url,rootUrl) {
-    torrent.files.forEach(function (file) {
+function BlobUrlFromUrl(url,rootUrl,type) {
+    torrent.files.forEach(function (file,type) {
         if ((file.path) == (rootUrl+'/'+url)) {
-            file.getBlobURL(function (err, burl) {
+            file.getBlobURL(function (err, burl,type) {
             if (err) return log(err.message);
+            log('type: '+type);
             log('file.getBlobURL() '+burl);
             var link = document.createElement('left')
-            link.setAttribute('src', url)
+            link.setAttribute('src', burl)
             document.querySelector('.xml').appendChild(link);
             });
 

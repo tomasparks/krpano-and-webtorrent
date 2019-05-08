@@ -30,13 +30,42 @@ $(document).ready(function () {
       
         torrent.addWebSeed(webSeedUrl)
         
-        
-        torrent.on('metadata', () => {console.log('metadata');torrent.files.forEach(function(file) {console.log(file.name);});});
-        torrent.on('ready', () => {console.log('ready');torrent.files.forEach(function(file) {console.log(file.name);});});
-        
-        //torrent.on('infoHash', infoHashFunction )
-        //torrent.on('metadata', metadataFunction )
-        //torrent.on('ready', readyFunction )
+ torrent.on('noPeers', () => {
+    console.log('noPeers');
+    torrent.files.forEach(function(file) {
+		console.log(file.name);
+    });
+});
+torrent.on('metadata', () => {
+    console.log('metadata');
+    torrent.files.forEach(function(file) {
+		console.log(file.name);
+    });
+});
+torrent.on('ready', () => {
+    console.log('ready');
+    torrent.files.forEach(function(file) {
+		console.log(file.name);
+    });
+});
+torrent.on('warning', () => {
+    console.log('warning');
+    torrent.files.forEach(function(file) {
+		console.log(file.name);
+    });
+});
+torrent.on('error', () => {
+    console.log('error');
+    torrent.files.forEach(function(file) {
+		console.log(file.name);
+    });
+});
+torrent.on('done', () => {
+    console.log('done');
+    torrent.files.forEach(function(file) {
+		console.log(file.name);
+    });
+});
         
    // Trigger statistics refresh
         torrent.on('done', onDone)

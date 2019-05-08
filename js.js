@@ -46,25 +46,24 @@ $(document).ready(function () {
 		// pano = panodata['scenes'] with 'id' = firstscene
 		
 		
-           // var xml = '<xml><krpano>
-           // '<scene id="'
-           //.$id.
-           // "'+$name+'">
-           //<preview url="'+$PreviewBobUrl+'" />
-           //<image>
-           //<left url="tour.data/aussen.tiles/pano_l.jpg"/>
+           var xml = '<xml><krpano><scene id="'+pano.id+'" >'
+           xml = xml + '<preview url="'+BlobUrlFromUrl(pano.preview, rootUrl)+'" />'
+           xml = xml + '<image>'
+           xml = xml + '<left url="'+BlobUrlFromUrl(pano.left, rootUrl)+'"/>'
+
 //<front url="tour.data/aussen.tiles/pano_f.jpg"/>
 //<right url="tour.data/aussen.tiles/pano_r.jpg"/>
 //<back url="tour.data/aussen.tiles/pano_b.jpg"/>
 //<up url="tour.data/aussen.tiles/pano_u.jpg"/>
 //<down url="tour.data/aussen.tiles/pano_d.jpg"/>
-//</image>
-
-           //</scene>
-           //</krpano>';
+           xml = xml + '</image></scene></krpano>';
+           
            // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
         }
         }
+        }
+        
+        function BlobUrlFromUrl(url,rootUrl) {
         }
 
         // Statistics

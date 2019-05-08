@@ -38,26 +38,22 @@ var client = new WebTorrent()
                 console.log('start(): krpano ready');  
                 console.log('start(): panodata: ')
 		       console.log(panodata);
-		        if (panodata) {
-		            console.log('start(): panodata: ')
-		            console.log(panodata);
-
-		      
+		        if (panodata) {		      
 		                firstscene = panodata['firstscene'];
 		                console.log('start(): '+firstscene);
 		                // pano = panodata['scenes'] with 'id' = firstscene
 		                //for (i = 1 to len(panodata.scenes)) {
 		                //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
 		                //}
-                        var xml = '<xml><krpano><scene id="'+pano.id+'" >'
-                        xml = xml + '<preview url="'+BlobUrlFromUrl(pano.preview, rootUrl)+'" />'
+                        var xml = '<xml><krpano><scene id="' + pano.id + '" name="' + pano.id + '" >'
+                        xml = xml + '<preview url="' + BlobUrlFromUrl(pano.preview, rootUrl) + '" />'
                         xml = xml + '<image>'
-                        xml = xml + '<left url="'+BlobUrlFromUrl(pano.left, rootUrl)+'"/>'
-                        xml = xml +'<front url="'+BlobUrlFromUrl(pano.front, rootUrl)+'"/>'
-                        xml = xml +'<right url="'+BlobUrlFromUrl(pano.right, rootUrl)+'"/>'
-                        xml = xml +'<back url="'+BlobUrlFromUrl(pano.back, rootUrl)+'"/>'
-                        xml = xml +'<up url="'+BlobUrlFromUrl(pano.up, rootUrl)+'"/>'
-                        xml = xml +'<down url="'+BlobUrlFromUrl(pano.down, rootUrl)+'"/>'
+                        xml = xml + '<left url="' + BlobUrlFromUrl(pano.left, rootUrl) + '"/>'
+                        xml = xml + '<front url="' + BlobUrlFromUrl(pano.front, rootUrl) + '"/>'
+                        xml = xml + '<right url="' + BlobUrlFromUrl(pano.right, rootUrl) + '"/>'
+                        xml = xml + '<back url="' + BlobUrlFromUrl(pano.back, rootUrl) + '"/>'
+                        xml = xml + '<up url="' + BlobUrlFromUrl(pano.up, rootUrl) + '"/>'
+                        xml = xml + '<down url="' + BlobUrlFromUrl(pano.down, rootUrl) + '"/>'
                         xml = xml + '</image></scene></krpano>';
                         console.log(xml);
                         // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")

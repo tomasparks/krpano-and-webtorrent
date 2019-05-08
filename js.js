@@ -1,6 +1,6 @@
      // var util = require('./util')
             // HTML elements
-      var panodata = {};
+      //var panodata = {};
       var $body = document.body
       var $progressBar = document.querySelector('#progressBar')
       var $numPeers = document.querySelector('#numPeers')
@@ -12,11 +12,7 @@
       
      var firstLoop = true; 
 
-$(document).ready(function () {
-  $.getJSON(panoJsonUrl, function(panodata){
- console.log('got panodata: '+panodata);
-    });
-});
+$(document).ready(function () {$.getJSON(panoJsonUrl, function(panodata){console.log('got panodata: '+panodata);});});
 
    
 var client = new WebTorrent()

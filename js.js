@@ -14,7 +14,7 @@
 
 $(document).ready(function () {
   $.getJSON(panoJsonUrl, function(panodata){
-// console.log(panodata);
+ console.log('got panodata: '+panodata);
     });
 });
 
@@ -40,9 +40,11 @@ var client = new WebTorrent()
               console.log('krpano is ready?');
               if (krpano) {console.log('krpano ready');  
 		        if (panodata) {
-		            console.log(panodata);firstLoop = false;
+		            console.log(panodata);
+		            firstLoop = false;
 		            }
 		      }
+		      
 		      /*          firstscene = panodata['firstscene'];
 		                // pano = panodata['scenes'] with 'id' = firstscene
 		                //for (i = 1 to len(panodata.scenes)) {

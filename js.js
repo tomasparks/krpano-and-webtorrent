@@ -69,7 +69,6 @@ var client = new WebTorrent()
 		      }
         
 function BlobUrlFromUrl(url,rootUrl, type) {
-    log('BlobUrlFromUrl(): type: '+type);
     torrent.files.forEach(function (file) {
         if ((file.path) == (rootUrl+'/'+url)) {
         switch(type) {
@@ -85,6 +84,22 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
                 var link = document.createElement('left');
+                link.setAttribute('src', burl);
+                document.querySelector('.xml').appendChild(link);
+                });
+                break;
+                            case 'right:
+                file.getBlobURL(function (err, burl, type) {
+                if (err) return log(err.message);
+                var link = document.createElement('right');
+                link.setAttribute('src', burl);
+                document.querySelector('.xml').appendChild(link);
+                });
+                break;
+                            case 'up':
+                file.getBlobURL(function (err, burl, type) {
+                if (err) return log(err.message);
+                var link = document.createElement('up');
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);
                 });

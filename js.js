@@ -68,24 +68,24 @@ var client = new WebTorrent()
 		      }
 		      }
         
-function BlobUrlFromUrl(url,rootUrl, urltype) {
-    log('BlobUrlFromUrl(): type: '+urltype);
+function BlobUrlFromUrl(url,rootUrl, type) {
+    log('BlobUrlFromUrl(): type: '+type);
     
-    torrent.files.forEach(function (file, urltype) {
+    torrent.files.forEach(function (file) {
     
-        log('torrent.files(): type: '+urltype);
+        log('torrent.files(): type: '+ type);
     
-        if ((file.path) == (rootUrl+'/'+urlurl)) {
+        if ((file.path) == (rootUrl+'/'+url)) {
     
-            file.getBlobURL(function (err, burl, urltype) {
+            file.getBlobURL(function (err, burl, type) {
     
             if (err) return log(err.message);
     
-            log('file.getBlobURL(): type: '+urltype);
+            log('file.getBlobURL(): type: 'type);
     
             log('file.getBlobURL() '+burl);
     
-            var link = document.createElement(urltype)
+            var link = document.createElement(type)
             link.setAttribute('src', burl)
             document.querySelector('.xml').appendChild(link);
             });

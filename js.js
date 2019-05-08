@@ -1,6 +1,6 @@
      // var util = require('./util')
             // HTML elements
-      var panodata = {}
+      var panodata = false;
       var $body = document.body
       var $progressBar = document.querySelector('#progressBar')
       var $numPeers = document.querySelector('#numPeers')
@@ -43,6 +43,8 @@ var client = new WebTorrent()
 		{
 		           
 		    if (panodata) {
+		    
+		    
 		 firstscene = panodata['firstscene'];
 		// pano = panodata['scenes'] with 'id' = firstscene
 		//for (i = 1 to len(panodata.scenes)) {

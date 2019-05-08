@@ -19,7 +19,7 @@ $(document).ready(function () {
 });
 
    
-      var client = new WebTorrent()
+var client = new WebTorrent()
    // window.client = client // for easier debugging
   //  client.on('warning', util.warning)
    // client.on('error', util.error)

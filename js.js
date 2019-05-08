@@ -69,13 +69,13 @@ var client = new WebTorrent()
 		      }
         
 function BlobUrlFromUrl(url,rootUrl,type) {
-    log('type: '+type);
+    log('BlobUrlFromUrl(): type: '+type);
     torrent.files.forEach(function (file,type) {
-        log('type: '+type);
+        log('torrent.files(): type: '+type);
         if ((file.path) == (rootUrl+'/'+url)) {
             file.getBlobURL(function (err, burl,type) {
             if (err) return log(err.message);
-            log('type: '+type);
+            log('file.getBlobURL(): type: '+type);
             log('file.getBlobURL() '+burl);
             var link = document.createElement(type)
             link.setAttribute('src', burl)

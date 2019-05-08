@@ -70,11 +70,12 @@ var client = new WebTorrent()
 		      }
         
 function BlobUrlFromUrl(url,rootUrl) {
-    torrent.files.forEach(function (file)
+    torrent.files.forEach(function (file) {
         console.log(file.path+'?'); 
         if ((file.path) == (rootUrl+'/'+url)) {
             console.log(rootUrl+'/'+url+'=='+file.path+' TRUE');
             }
+        }
     )
 }
 //                 file.getBlobURL(function (err, url) {

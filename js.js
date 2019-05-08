@@ -44,6 +44,7 @@ var client = new WebTorrent()
 
 		      
 		                firstscene = panodata['firstscene'];
+		                console.log('start(): '+firstscene);
 		                // pano = panodata['scenes'] with 'id' = firstscene
 		                //for (i = 1 to len(panodata.scenes)) {
 		                //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}

@@ -39,9 +39,11 @@ $(document).ready(function () {
         
         
         function start() {
+        console.log('krpano is ready?');
         if (krpano)
+                console.log('krpano ready');
 		{
-		
+		           
 		    if (panodata) {
 		 firstscene = panodata['firstscene'];
 		// pano = panodata['scenes'] with 'id' = firstscene

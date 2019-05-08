@@ -48,17 +48,17 @@ var client = new WebTorrent()
 		                //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
 		                //}
 		               panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
-		               console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);
+		               console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
 		               
-		                var xml = '<xml><krpano><scene id="' + pano.id + '" name="' + pano.id + '" >'
-                        xml = xml + '<preview url="' + BlobUrlFromUrl(pano.preview, rootUrl) + '" />'
+		                var xml = '<xml><krpano><scene id="' + pano.id + '" name="' + pano.name + '" >'
+                        xml = xml + '<preview url="' + BlobUrlFromUrl(files.preview, rootUrl) + '" />'
                         xml = xml + '<image>'
-                        xml = xml + '<left url="' + BlobUrlFromUrl(pano.left, rootUrl) + '"/>'
-                        xml = xml + '<front url="' + BlobUrlFromUrl(pano.front, rootUrl) + '"/>'
-                        xml = xml + '<right url="' + BlobUrlFromUrl(pano.right, rootUrl) + '"/>'
-                        xml = xml + '<back url="' + BlobUrlFromUrl(pano.back, rootUrl) + '"/>'
-                        xml = xml + '<up url="' + BlobUrlFromUrl(pano.up, rootUrl) + '"/>'
-                        xml = xml + '<down url="' + BlobUrlFromUrl(pano.down, rootUrl) + '"/>'
+                        xml = xml + '<left url="' + BlobUrlFromUrl(files.left, rootUrl) + '"/>'
+                        xml = xml + '<front url="' + BlobUrlFromUrl(files.front, rootUrl) + '"/>'
+                        xml = xml + '<right url="' + BlobUrlFromUrl(files.right, rootUrl) + '"/>'
+                        xml = xml + '<back url="' + BlobUrlFromUrl(files.back, rootUrl) + '"/>'
+                        xml = xml + '<up url="' + BlobUrlFromUrl(files.up, rootUrl) + '"/>'
+                        xml = xml + '<down url="' + BlobUrlFromUrl(files.down, rootUrl) + '"/>'
                         xml = xml + '</image></scene></krpano>';
                         console.log(xml);
                         // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")

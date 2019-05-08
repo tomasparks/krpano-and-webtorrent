@@ -30,18 +30,22 @@ $(document).ready(function () {
       
         torrent.addWebSeed(webSeedUrl)
         
-        torrent.on('infoHash', infoHashFunction )
-        torrent.on('metadata', metadataFunction )
-        torrent.on('ready', readyFunction )
+        
+        torrent.on('metadata', () => {console.log('metadata');torrent.files.forEach(function(file) {console.log(file.name);});});
+        torrent.on('ready', () => {console.log('ready');torrent.files.forEach(function(file) {console.log(file.name);});});
+        
+        //torrent.on('infoHash', infoHashFunction )
+        //torrent.on('metadata', metadataFunction )
+        //torrent.on('ready', readyFunction )
         
    // Trigger statistics refresh
         torrent.on('done', onDone)
         setInterval(onProgress, 500)
         onProgress()
         
-        function infoHashFunction() {console.log('infoHash');}
-        function metadataFunction() {console.log('metadata');}
-                function readyFunction() {console.log('ready');}
+        //function infoHashFunction() {console.log('infoHash');}
+        //function metadataFunction() {console.log('metadata');}
+        //function readyFunction() {console.log('ready');}
         
         function start() {
         console.log('krpano is ready?');

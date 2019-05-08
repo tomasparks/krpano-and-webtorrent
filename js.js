@@ -30,9 +30,9 @@ $(document).ready(function () {
       
         torrent.addWebSeed(webSeedUrl)
         
-        torrent.on('infoHash', function() { console.log('infoHash') })
-        torrent.on('metadata', function() { console.log('metadata') })
-        torrent.on('ready', function() { console.log('ready') })
+        torrent.on('infoHash', console.log('infoHash') )
+        torrent.on('metadata', console.log('metadata') )
+        torrent.on('ready', console.log('ready') )
         
    // Trigger statistics refresh
         torrent.on('done', onDone)

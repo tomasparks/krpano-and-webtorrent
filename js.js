@@ -69,10 +69,9 @@ var client = new WebTorrent()
                             panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
 		                        console.log(scene.id+'=='+firstscene); pano=scene;
 		                        var el = document.querySelector('.xml');
-                                var xml = '<xml><krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
-                                xml = xml + '<image>'
+                                var xml = '﻿<krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
                                 xml = xml + el.innerHTML;
-                                xml = xml + '</image></scene></krpano>';
+                                xml = xml + '</scene></krpano>';
                                 console.log(xml);
                                 krpano.call("loadxml("+ escape(xml)+",REMOVESCENES);")
 	                            firstLoop = false;}});}
@@ -97,7 +96,8 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
                 log('left bloburl:'+burl);
-                var link = document.createElement('left');
+                var image = document.createElement('image')
+                var link = image.createElement('left');
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);
                 });

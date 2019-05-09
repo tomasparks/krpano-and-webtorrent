@@ -161,7 +161,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
         // Statistics
         function onProgress () {
            if (firstLoop) {start();}
-           log('xml count: '+document.querySelector('.xml').childElementCount);
+          // log('xml count: '+document.querySelector('.xml').childElementCount);
             
           // Peers
           $numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')

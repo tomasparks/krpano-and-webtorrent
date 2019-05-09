@@ -50,7 +50,7 @@ var client = new WebTorrent()
 		                //}
 		                var xmlcount = document.querySelector('.xml').childElementCount;
 		                console.log(xmlcount);
-		                if (xmlcount == 0 && !wait) {
+		                if (xmlcount == 1 && !wait) {
 		                    panodata.scenes.forEach(function (scene) {
 		                        if (scene.id ==firstscene) {
 		                            console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;

@@ -96,10 +96,10 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
                 log('left bloburl:'+burl);
-                var image = document.createElement('image')
+                
                 var link = image.createElement('left');
                 link.setAttribute('src', burl);
-                document.querySelector('.xml').appendChild(link);
+                document.querySelector('image > .xml').appendChild(link);
                 });
                 break;
                 case 'right':

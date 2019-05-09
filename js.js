@@ -65,7 +65,7 @@ var client = new WebTorrent()
                                 }
                        })
                        }
-                       if (xmlcount >=7) {
+                       if (xmlcount >=1) {
                             panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
 		                        console.log(scene.id+'=='+firstscene); pano=scene;
 		                        var el = document.querySelector('.xml');

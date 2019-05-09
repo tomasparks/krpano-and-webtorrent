@@ -88,7 +88,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 document.querySelector('.xml').appendChild(link);
                 });
                 break;
-                            case 'right:
+                case 'right':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
                 var link = document.createElement('right');
@@ -96,7 +96,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 document.querySelector('.xml').appendChild(link);
                 });
                 break;
-                            case 'up':
+                case 'up':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
                 var link = document.createElement('up');

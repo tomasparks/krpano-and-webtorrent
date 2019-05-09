@@ -75,6 +75,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
              case 'preview':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
+                log('preview bloburl:'+burl);
                 var link = document.createElement('preview');
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);
@@ -83,6 +84,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
             case 'left':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
+                log('left bloburl:'+burl);
                 var link = document.createElement('left');
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);
@@ -91,6 +93,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 case 'right':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
+                log('right bloburl:'+burl);
                 var link = document.createElement('right');
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);
@@ -99,6 +102,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 case 'up':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
+                log('up bloburl:'+burl);
                 var link = document.createElement('up');
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);

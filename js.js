@@ -10,7 +10,8 @@
       var $uploadSpeed = document.querySelector('#uploadSpeed')
       var $downloadSpeed = document.querySelector('#downloadSpeed')
       
-     var firstLoop = true; 
+     var firstLoop = true;
+     var wait = false; 
 
 
 
@@ -49,7 +50,7 @@ var client = new WebTorrent()
 		                //}
 		                var xmlcount = document.querySelector('.xml').childElementCount;
 		                console.log(xmlcount);
-		                if (xmlcount == 0) {
+		                if (xmlcount == 0 && !wait) {
 		                    panodata.scenes.forEach(function (scene) {
 		                        if (scene.id ==firstscene) {
 		                            console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
@@ -60,6 +61,7 @@ var client = new WebTorrent()
                                     BlobUrlFromUrl(files.back, rootUrl,'back')
                                     BlobUrlFromUrl(files.up, rootUrl,'up')
                                     BlobUrlFromUrl(files.down, rootUrl,'down')
+                                    var wait = true;
                                 }
                        })
                        }

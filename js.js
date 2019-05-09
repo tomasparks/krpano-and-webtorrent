@@ -93,7 +93,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 document.querySelector('.xml').appendChild(link);
                 });
                 break;
-            case 'left':
+         /*   case 'left':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
                 log('left bloburl:'+burl);
@@ -146,7 +146,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);
                 });
-                break;
+                break; */
         }
            }
         })

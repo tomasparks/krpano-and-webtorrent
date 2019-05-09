@@ -108,6 +108,33 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 document.querySelector('.xml').appendChild(link);
                 });
                 break;
+                                case 'down':
+                file.getBlobURL(function (err, burl, type) {
+                if (err) return log(err.message);
+                log('down bloburl:'+burl);
+                var link = document.createElement('down');
+                link.setAttribute('src', burl);
+                document.querySelector('.xml').appendChild(link);
+                });
+                break;
+                                                case 'front':
+                file.getBlobURL(function (err, burl, type) {
+                if (err) return log(err.message);
+                log('front bloburl:'+burl);
+                var link = document.createElement('front');
+                link.setAttribute('src', burl);
+                document.querySelector('.xml').appendChild(link);
+                });
+                break;
+                                                case 'back':
+                file.getBlobURL(function (err, burl, type) {
+                if (err) return log(err.message);
+                log('back bloburl:'+burl);
+                var link = document.createElement('back');
+                link.setAttribute('src', burl);
+                document.querySelector('.xml').appendChild(link);
+                });
+                break;
         }
            }
         })

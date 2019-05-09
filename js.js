@@ -48,23 +48,29 @@ var client = new WebTorrent()
 		                //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
 		                //}
 		                var xmlcount = document.querySelector('.xml').childElementCount;
-		               panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
-		               console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
-		                var xml = '<xml><krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
-                        BlobUrlFromUrl(files.preview, rootUrl, 'preview')
-                        xml = xml + '<image>'
-                        BlobUrlFromUrl(files.left, rootUrl,'left')
+		                if (xmlcount == 0) {
+		                    panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
+		                    console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
+		               BlobUrlFromUrl(files.preview, rootUrl, 'preview')
+		                BlobUrlFromUrl(files.left, rootUrl,'left')
                         BlobUrlFromUrl(files.front, rootUrl,'front')
                         BlobUrlFromUrl(files.right, rootUrl,'right')
                         BlobUrlFromUrl(files.back, rootUrl,'back')
                         BlobUrlFromUrl(files.up, rootUrl,'up')
                         BlobUrlFromUrl(files.down, rootUrl,'down')
+		               
+                       } })};
+                       if (xmlcount ==7) {
+                        panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
+		                    console.log(scene.id+'=='+firstscene); pano=scene;
+		                    var el = document.querySelector('.xml');
+                        var xml = '<xml><krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
+                        xml = xml + '<image>'
+                        xml = xml + el.outerHTML;
                         xml = xml + '</image></scene></krpano>';
                         console.log(xml);
                         // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
-	            firstLoop = false;}})
-		                
-
+	            firstLoop = false;}});}
 		            }
 		      }
 		      }

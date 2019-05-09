@@ -71,7 +71,7 @@ var client = new WebTorrent()
 		                        var el = document.querySelector('.xml');
                                 var xml = '<xml><krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
                                 xml = xml + '<image>'
-                                xml = xml + el.outerHTML;
+                                xml = xml + el.innerHTML;
                                 xml = xml + '</image></scene></krpano>';
                                 console.log(xml);
                                 // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")

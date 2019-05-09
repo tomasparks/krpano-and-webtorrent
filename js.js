@@ -74,7 +74,7 @@ var client = new WebTorrent()
                                 xml = xml + el.innerHTML;
                                 xml = xml + '</image></scene></krpano>';
                                 console.log(xml);
-                                // krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
+                                krpano.call("loadxml("+ escape($xml)+",REMOVESCENES);")
 	                            firstLoop = false;}});}
 		            }
 		      }

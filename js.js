@@ -61,7 +61,7 @@ var client = new WebTorrent()
                                     BlobUrlFromUrl(files.back, rootUrl,'back')
                                     BlobUrlFromUrl(files.up, rootUrl,'up')
                                     BlobUrlFromUrl(files.down, rootUrl,'down')
-                                    var wait = true;
+                                    wait = true;
                                 }
                        })
                        }
@@ -75,6 +75,7 @@ var client = new WebTorrent()
                                 console.log(xml);
                                 krpano.call("loadxml("+ escape(xml)+",REMOVESCENES);")
 	                            firstLoop = false;}});}
+	                            wait = true;
 		            }
 		      }
 		      }
@@ -96,10 +97,9 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
                 log('left bloburl:'+burl);
-                
                 var link = image.createElement('left');
                 link.setAttribute('src', burl);
-                document.querySelector('image > .xml').appendChild(link);
+                document.querySelector("image > .xml").appendChild(link);
                 });
                 break;
                 case 'right':

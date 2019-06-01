@@ -73,7 +73,7 @@ var client = new WebTorrent()
                                 xml = xml + el.innerHTML;
                                 xml = xml + '</scene></krpano>';
                                 //console.log(xml);
-                                console.log('krpano.call("\nloadxml("+escape(xml)+",\n null, MERGE, BLEND(0.5)));");');'
+                                console.log('krpano.call("\nloadxml("+escape(xml)+",\n null, MERGE, BLEND(0.5)));");');
                                 
                                 //krpano.call("loadxml("+escape(xml)+",REMOVESCENES);")
                                 

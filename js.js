@@ -69,15 +69,14 @@ var client = new WebTorrent()
                             panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
 		                        console.log(scene.id+'=='+firstscene); pano=scene;
 		                        var el = document.querySelector('.xml');
-                                var xml = '﻿<krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
-                                xml = xml + el.innerHTML;
-                                xml = xml + '</scene></krpano>';
+                                var xmlstring = '﻿<krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
+                                xmlstring = xmlstring + el.innerHTML;
+                                xmlstring = xmlstring + '</scene></krpano>';
                                 //console.log(xml);
-                                console.log('krpano.call("\nloadxml("+escape(xml)+",\n null, MERGE, BLEND(0.5)));");');
                                 
                                 //krpano.call("loadxml("+escape(xml)+",REMOVESCENES);")
                                 
-                                krpano.call("loadxml("+escape(xml)+", null, MERGE, BLEND(0.5));"));
+                               krpano.call("loadxml(" + escape(xmlstring) + ", null, MERGE, BLEND(0.5));");
 	                            firstLoop = false;}});}
 	                            wait = true;
 		            }

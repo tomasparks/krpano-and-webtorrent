@@ -90,7 +90,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
              case 'preview':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
-                log('preview bloburl:'+burl);
+                log('preview bloburl:'+burl+'<br />img src="'+burl+'" />');
                 var link = document.createElement('preview');
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);
@@ -207,7 +207,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
         return (neg ? '-' : '') + num + ' ' + unit
       }
       
-            function log (str) {
+function log (str) {
         var p = document.createElement('p')
         p.innerHTML = str
         document.querySelector('.log').appendChild(p)

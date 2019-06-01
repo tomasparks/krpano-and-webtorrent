@@ -90,7 +90,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
              case 'preview':
                 file.getBlobURL(function (err, burl, type) {
                 if (err) return log(err.message);
-                log('preview bloburl:'+burl+'<br />img src="'+burl+'" />');
+                log('preview bloburl: '+burl+'<br /><img src="'+burl+'" />');
                 var link = document.createElement('preview');
                 link.setAttribute('src', burl);
                 document.querySelector('.xml').appendChild(link);

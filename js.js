@@ -93,7 +93,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
                 log('preview bloburl: '+burl+'<br /><img src="'+burl+'" />');
                 var link = document.createElement('preview');
                 link.setAttribute('src', burl);
-                document.querySelector('.xml').appendChild(link);
+               // document.querySelector('.xml').appendChild(link);
                 });
                 break;
          /*   case 'left':

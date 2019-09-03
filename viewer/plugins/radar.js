@@ -1,6 +1,6 @@
 /*
-	krpano 1.19-pr16 Radar Plugin (build 2018-04-04)
-	http://krpano.com/plugins/radar/
+	krpano 1.20 Radar Plugin (build 2019-09-02)
+	https://krpano.com/plugins/radar/
 */
 var krpanoplugin=function(){function J(k,b){function a(d){return"rgb("+(d>>16&255)+","+(d>>8&255)+","+(d&255)+")"}var d=document.createElementNS("http://www.w3.org/2000/svg","svg");d.setAttribute("width",k);d.setAttribute("height",b);d.style.position="absolute";d.style.left="0px";d.style.top="0px";var e=document.createElementNS("http://www.w3.org/2000/svg","path");d.appendChild(e);var c={};c.svg=d;c.path=e;c.setstyle=function(d,b,k,c,f){e.setAttribute("stroke",a(d));e.setAttribute("stroke-width",
 b);e.setAttribute("stroke-opacity",k);e.setAttribute("fill",a(c));e.setAttribute("fill-opacity",f)};c.drawpie=function(d,b,k,a,c){var g,f;a>c&&(g=c,c=a,a=g);a=a*Math.PI/180;c=c*Math.PI/180;f=c-a;g=(a+c)/2;var h=f>Math.PI?1:0;f>=2*Math.PI&&(f=2*Math.PI-.01);a=g-f/2;c=g+f/2;g=d+k*Math.sin(a);a=b-k*Math.cos(a);f=d+k*Math.sin(c);c=b-k*Math.cos(c);e.setAttribute("d","M "+d+","+b+" L "+g+","+a+" A "+k+","+k+" 0 "+h+" 1 "+f+","+c+" Z")};return c}function A(a){r=!0;n(a);e.mouse&&(window.addEventListener("mousemove",

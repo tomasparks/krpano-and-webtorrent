@@ -6,7 +6,7 @@
 	-->
 
 	<action name="fps_install" autorun="preinit" scope="local">
-		delayedcall(1.0,
+		delayedcall(0.5,
 			addlayer(fps_display);
 			set(layer[fps_display],
 				type=text,
@@ -16,6 +16,7 @@
 				txtshadow='0 0 1 0x000000 1.0',
 				bg=false,
 				parent=STAGE,
+				vr=true,
 				enabled=false
 			);
 			setinterval(fps_plugin, 0.5,

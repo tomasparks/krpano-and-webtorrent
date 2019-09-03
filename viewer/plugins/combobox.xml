@@ -1,7 +1,8 @@
 <krpano>
 
 	<!--
-		combobox.xml Plugin - krpano 1.19-pr16
+		krpano 1.20 combobox.xml Plugin
+		https://krpano.com/plugins/combobox/
 
 		- This plugin converts <combobox> elements in the current xml
 		  into <layer> container, scrollarea and textfield elements.
@@ -53,8 +54,8 @@
 
 	<!-- path to the scrollarea plugin -->
 	<combobox_scrollareaplugin
-		url.html5="%SWFPATH%/plugins/scrollarea.js"
-		url.flash="%SWFPATH%/plugins/scrollarea.swf"
+		url.html5="%VIEWER%/plugins/scrollarea.js"
+		url.flash="%VIEWER%/plugins/scrollarea.swf"
 		/>
 
 	<!-- core internal layer styles -->
@@ -457,7 +458,7 @@
 			 rotating textfields (the marker symbol here) are not possible in
 			 flash (a flashplayer limitation), so use a rotated symbol instead.
 		-->
-		if(device.html5,
+		if(global.device.html5,
 			tween(global.layer[get(cbname)].marker.rotate, 90, get(cb.open_close_speed));
 		  ,
 			set(global.layer[get(cbname)].marker.html, '◀');
@@ -491,7 +492,7 @@
 			tween(global.layer[get(cb.name)].scrollarea.y, calc(-offset), get(cb.open_close_speed), default, global.layer[get(cb.name)].scrollarea.update(); );
 			tween(global.layer[get(cb.name)].marker.y, calc(cb.margin + offset + cb.autosize_max_h/2), get(cb.open_close_speed));
 			<!-- special html5/flash case: rotate marker or change symbol -->
-			if(device.html5,
+			if(global.device.html5,
 				tween(global.layer[get(cb.name)].marker.rotate, 0, get(cb.open_close_speed));
 			  ,
 				set(global.layer[get(cb.name)].marker.html, '▼');

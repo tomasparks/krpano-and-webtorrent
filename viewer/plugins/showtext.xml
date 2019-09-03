@@ -4,19 +4,21 @@
 		- showtext() and <textstyle> support for HTML5
 		- extended <textstyle> functionality compared to the build-in showtext() action
 		- just include this xml file via: <include url="showtext.xml" />
-		- docu: http://krpano.com/plugins/showtext/
-		- krpano 1.19-pr14
+		- docu: https://krpano.com/plugins/showtext/
+		- krpano 1.20
 	-->
 
 
 	<!-- predefine a DEFAULT textstyle element -->
 	<textstyle name="DEFAULT" />
+	
+	
 
 
 	<!-- the automatic running (autorun=preinit) install action -->
 	<action name="showtext_install" autorun="preinit" scope="private:showtext">
-		<!-- redirect the build-in 'showtext' action to the 'showtext_xml' action: -->
-		set(global.showtext, action(showtext_xml,'%%1','%%2') );
+		<!-- remove the build-in 'showtext' function to use the 'showtext' <action> instead: -->
+		delete(global.showtext);
 
 		<!-- initialize internal variables -->
 		set(showtext_style, DEFAULT);
@@ -29,7 +31,7 @@
 	</action>
 	
 
-	<action name="showtext_xml" scope="private:showtext" args="text, style">
+	<action name="showtext" scope="private:showtext" args="text, style">
 		if(!style, set(style, DEFAULT));
 		
 		if(global.textstyle[get(style)], 

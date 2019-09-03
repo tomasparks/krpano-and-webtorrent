@@ -1,6 +1,6 @@
 /*
-	krpano 1.19-pr16 Snow Plugin (build 2018-04-04)
-	http://krpano.com/plugins/snow/
+	krpano 1.20 Snow Plugin (build 2019-09-02)
+	https://krpano.com/plugins/snow/
 */
 var krpanoplugin=function(){function z(Y,A){A=!0===A;if(g&&B){var m=f.get("view");if(null!=m&&null!=m.r_rmatrix){var w=B,p=g.width,t=g.height;w.clearRect(0,0,p,t);var b,y=1;switch(String(a.mode).toLowerCase()){case "snow":y=1;break;case "image":y=3}var n=a.flakes;f.ismobile&&1E3<n&&(n=1E3);f.istablet&&2E3<n&&(n=2E3);var u=a.color,I=1E3*a.floor,C=1E3*a.spreading,J=1*a.imagescale,c=1*a.speed,D=1*a.shake,z=1*a.speedvariance,E=1*a.wind,q=a.winddir*Math.PI/180;X!=u&&(r=null,X=u);if(null==r){r=document.createElement("canvas");
 r.width=2;r.height=2;var F=r.getContext("2d");F.fillStyle="rgba("+(u>>16&255)+","+(u>>8&255)+","+(u&255)+",0.5)";F.fillRect(0,0,2,2)}var u=r,F=E*Math.cos(q),E=E*Math.sin(q),q=null,K=0,L=0;if(3==y){var l=a.imageurl;if(null==l||""==l)return;M!=l&&(v=null,M=l,v=new Image,v.src=f.parsePath(M));if(null==v)return;v&&v.complete&&(q=v,K=q.naturalWidth,L=q.naturalHeight);if(null==q)return}null==h&&(h=Array(3*n));if(0==A&&n!=G){if(G<n)for(b=3*G;b<3*n;b+=3)h[0|b]=(Math.random()-.5)*C,h[0|b+2]=(Math.random()-

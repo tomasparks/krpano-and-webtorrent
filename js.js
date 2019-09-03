@@ -77,6 +77,7 @@ var client = new WebTorrent()
                                 //krpano.call("loadxml("+escape(xml)+",REMOVESCENES);")
                                 
                                krpano.call("loadxml(" + escape(xmlstring) + ", null, MERGE, BLEND(0.5));");
+                               console.log('krpano.call("loadxml(" + escape(xmlstring) + ", null, MERGE, BLEND(0.5));");');
 	                            firstLoop = false;}});}
 	                            wait = true;
 		            }

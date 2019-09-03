@@ -72,7 +72,7 @@ var client = new WebTorrent()
                                 var xmlstring = '﻿<krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
                                 xmlstring = xmlstring + el.innerHTML;
                                 xmlstring = xmlstring + '</scene></krpano>';
-                                //console.log(xml);
+                                console.log(xmlstring);
                                 
                                 //krpano.call("loadxml("+escape(xml)+",REMOVESCENES);")
                                 

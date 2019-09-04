@@ -1,6 +1,6 @@
      // var util = require('./util')
             // HTML elements
-      var panodata = JSON.parse(db);
+//      var panodata = JSON.parse(db);
       var $body = document.body
       var $progressBar = document.querySelector('#progressBar')
       var $numPeers = document.querySelector('#numPeers')
@@ -10,8 +10,8 @@
       var $uploadSpeed = document.querySelector('#uploadSpeed')
       var $downloadSpeed = document.querySelector('#downloadSpeed')
       
-     var firstLoop = true;
-     var wait = false; 
+//     var firstLoop = true;
+//     var wait = false; 
 
 
 
@@ -164,7 +164,7 @@ function BlobUrlFromUrl(url,rootUrl, type) {
            
         // Statistics
         function onProgress () {
-           if (firstLoop) {start();}
+//           if (firstLoop) {start();}
           // log('xml count: '+document.querySelector('.xml').childElementCount);
             
           // Peers

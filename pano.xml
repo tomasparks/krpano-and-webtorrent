@@ -1,47 +1,4 @@
 <krpano>
-<action type="Javascript" autorun="preinit"><![CDATA[
-  krpano.customParsePath = function(url)
-  {
-    console.log('url: ',url);
-    log('url: '+url);
-    
-    // load 'image2.jpg' instead of 'image1.jpg':
-   // if(url == "image1.jpg") url = "image2.jpg";
-    
-    return url;
-  }
-  krpano.customParseTilePath = function(path, cubeside, level, h, v, stereo, image)
-  {
-      console.log('url: ',url);
-    log('url: '+url);
-				if (image.maptype == "wiki")
-			{
-				// WikiMaps tile placeholders
-				path = path.split("${x}").join(1*h-1);
-				path = path.split("${y}").join(1*v-1);
-				path = path.split("${z}").join(1*level+1);
-			}
-			else if (image.maptype == "osm")
-			{
-				// OpenStreetMap tile placeholders
-				path = path.split("{s}").join( "abc"[(Math.random()*2.9)|0] );
-				path = path.split("{x}").join(1*h-1);
-				path = path.split("{y}").join(1*v-1);
-				path = path.split("{z}").join(1*level+1);
-			}
-			else if (image.maptype == "basemap_at")
-			{
-				// Basemap.at
-				path = path.split("{s}").join( ["","1","2","3","4"][(Math.random()*4.9)|0] );
-				path = path.split("{x}").join(1*h-1);
-				path = path.split("{y}").join(1*v-1);
-				path = path.split("{z}").join(1*level+1+1+1+1);
-			}
-			
-			return path;
-    }
-]]></action>
-	
 	<scene name="er" title="Entrance" onstart="" thumburl="panos/IMG_1191-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="3.51" vlookat="1.00" fovtype="MFOV" fov="87.26" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -215,5 +172,50 @@
 		</hotspot>
 
 	</scene>
+
+<action type="Javascript" autorun="preinit"><![CDATA[
+  krpano.customParsePath = function(url)
+  {
+    console.log('url: ',url);
+    log('url: '+url);
+    
+    // load 'image2.jpg' instead of 'image1.jpg':
+   // if(url == "image1.jpg") url = "image2.jpg";
+    
+    return url;
+  }
+  krpano.customParseTilePath = function(path, cubeside, level, h, v, stereo, image)
+  {
+      console.log('url: ',url);
+    log('url: '+url);
+				if (image.maptype == "wiki")
+			{
+				// WikiMaps tile placeholders
+				path = path.split("${x}").join(1*h-1);
+				path = path.split("${y}").join(1*v-1);
+				path = path.split("${z}").join(1*level+1);
+			}
+			else if (image.maptype == "osm")
+			{
+				// OpenStreetMap tile placeholders
+				path = path.split("{s}").join( "abc"[(Math.random()*2.9)|0] );
+				path = path.split("{x}").join(1*h-1);
+				path = path.split("{y}").join(1*v-1);
+				path = path.split("{z}").join(1*level+1);
+			}
+			else if (image.maptype == "basemap_at")
+			{
+				// Basemap.at
+				path = path.split("{s}").join( ["","1","2","3","4"][(Math.random()*4.9)|0] );
+				path = path.split("{x}").join(1*h-1);
+				path = path.split("{y}").join(1*v-1);
+				path = path.split("{z}").join(1*level+1+1+1+1);
+			}
+			
+			return path;
+    }
+]]></action>
+	
+
 
 </krpano>

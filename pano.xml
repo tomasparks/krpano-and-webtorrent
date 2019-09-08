@@ -1,4 +1,86 @@
-<krpano>
+<krpano  version="1.20" title="Apartment">
+	<include url="skin/vtourskin.xml" />
+	
+	<style name="roomspot" alpha="0.0" capture="false" />
+	
+	<action name="goto">
+		skin_loadscene(%1, OPENBLEND(0.8, 0.0, 0.6, 0.3, easeOutQuad));
+	</action>
+
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="true"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE|KEEPVIEW"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=""
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	
 	<scene name="er" title="Entrance" onstart="" thumburl="panos/IMG_1191-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="3.51" vlookat="1.00" fovtype="MFOV" fov="87.26" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -6,8 +88,7 @@
 		<preview url="panos/IMG_1191-HDR_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="panos/IMG_1191-HDR_Panorama.tiles/pano_%s.jpg" if="browser.domain != 'krpano.com'" />
-			<cube url="https://krpano.com/tours/apartment/panos/IMG_1191-HDR_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" if="browser.domain == 'krpano.com'" />
+			<cube url="panos/IMG_1191-HDR_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs56313" style="roomspot|skin_tooltips" tooltip="get:scene[lr].title" onclick="goto(lr);">
@@ -55,8 +136,7 @@
 		<preview url="panos/IMG_1215-HDR_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="panos/IMG_1215-HDR_Panorama.tiles/pano_%s.jpg" if="browser.domain != 'krpano.com'" />
-			<cube url="https://krpano.com/tours/apartment/panos/IMG_1215-HDR_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" if="browser.domain == 'krpano.com'" />
+			<cube url="panos/IMG_1215-HDR_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs146786" style="roomspot|skin_tooltips" tooltip="get:scene[tr].title" onclick="goto(tr);">
@@ -84,8 +164,7 @@
 		<preview url="panos/IMG_1236-HDR_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="panos/IMG_1236-HDR_Panorama.tiles/pano_%s.jpg" if="browser.domain != 'krpano.com'" />
-			<cube url="https://krpano.com/tours/apartment/panos/IMG_1236-HDR_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" if="browser.domain == 'krpano.com'" />
+			<cube url="panos/IMG_1236-HDR_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs48248" style="roomspot|skin_tooltips" tooltip="get:scene[lr].title" onclick="goto(lr);">
@@ -105,8 +184,7 @@
 		<preview url="panos/IMG_1203-HDR_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="panos/IMG_1203-HDR_Panorama.tiles/pano_%s.jpg" if="browser.domain != 'krpano.com'" />
-			<cube url="https://krpano.com/tours/apartment/panos/IMG_1203-HDR_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" if="browser.domain == 'krpano.com'" />
+			<cube url="panos/IMG_1203-HDR_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs132874" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
@@ -123,19 +201,11 @@
 
 		<view hlookat="0.54" vlookat="4.49" fovtype="MFOV" fov="87.09" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<krpano if="browser.domain != 'krpano.com'">
-			<preview url="panos/IMG_1228_Panorama.tiles/preview.jpg" />
-			<image>
-				<cube url="panos/IMG_1228_Panorama.tiles/pano_%s.jpg"  />
-			</image>
-		</krpano>
-		
-		<krpano if="browser.domain == 'krpano.com'">
-			<preview url="https://krpano.com/tours/apartment/panos/IMG_1228_Panorama.tiles/preview.jpg" />
-			<image prealign="0|-90|0">
-				<cube url="https://krpano.com/tours/apartment/panos/IMG_1228_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" />
-			</image>
-		</krpano>
+		<preview url="panos/IMG_1228_Panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/IMG_1228_Panorama.tiles/pano_%s.jpg" />
+		</image>
 		
 		<hotspot name="hs19218" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
 			<point ath="calc:132-90" atv="-31.574721" />
@@ -150,19 +220,11 @@
 
 		<view hlookat="-79.51" vlookat="17.02" fovtype="MFOV" fov="87.20" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<krpano if="browser.domain != 'krpano.com'">
-			<preview url="panos/IMG_1232_Panorama.tiles/preview.jpg" />
-			<image>
-				<cube url="panos/IMG_1232_Panorama.tiles/pano_%s.jpg"  />
-			</image>
-		</krpano>
-		
-		<krpano if="browser.domain == 'krpano.com'">
-			<preview url="https://krpano.com/tours/apartment/panos/IMG_1232_Panorama.tiles/preview.jpg" />
-			<image prealign="0|+90|0">
-				<cube url="https://krpano.com/tours/apartment/panos/IMG_1232_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" />
-			</image>
-		</krpano>
+		<preview url="panos/IMG_1232_Panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/IMG_1232_Panorama.tiles/pano_%s.jpg" />
+		</image>
 		
 		<hotspot name="hs32595" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
 			<point ath="calc:170+90" atv="-10.315197" />
@@ -172,6 +234,8 @@
 		</hotspot>
 
 	</scene>
+
+
 
 <action type="Javascript" autorun="preinit"><![CDATA[
  /* krpano.customParsePath = function(url)

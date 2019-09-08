@@ -174,7 +174,7 @@
 	</scene>
 
 <action type="Javascript" autorun="preinit"><![CDATA[
-  krpano.customParsePath = function(url)
+ /* krpano.customParsePath = function(url)
   {
     console.log('url: ',url);
     log('url: '+url);
@@ -213,7 +213,7 @@
 			}
 			
 			return path;
-    }
+    } */
 ]]></action>
 	
 

@@ -1,5 +1,5 @@
 <krpano  version="1.20" title="Apartment">
-	<include url="skin/vtourskin.xml" />
+	<include url="./tours/apartment/skin/vtourskin.xml" />
 	
 	<style name="roomspot" alpha="0.0" capture="false" />
 	

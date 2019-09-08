@@ -2,15 +2,18 @@
 <action type="Javascript" autorun="preinit"><![CDATA[
   krpano.customParsePath = function(url)
   {
-    console.log("url:",url);
+    console.log('url: ',url);
+    log('url: '+url);
     
     // load 'image2.jpg' instead of 'image1.jpg':
-    if(url == "image1.jpg") url = "image2.jpg";
+   // if(url == "image1.jpg") url = "image2.jpg";
     
     return url;
   }
   krpano.customParseTilePath = function(path, cubeside, level, h, v, stereo, image)
   {
+      console.log('url: ',url);
+    log('url: '+url);
 				if (image.maptype == "wiki")
 			{
 				// WikiMaps tile placeholders

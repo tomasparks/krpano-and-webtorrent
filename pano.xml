@@ -1,3 +1,216 @@
 <krpano>
-<preview type="grid(cube,16,16,512,0xCCCCCC,0xFFFFFF,0x999999);"/>
+<action type="Javascript" autorun="preinit"><![CDATA[
+  krpano.customParsePath = function(url)
+  {
+    console.log("url:",url);
+    
+    // load 'image2.jpg' instead of 'image1.jpg':
+    if(url == "image1.jpg") url = "image2.jpg";
+    
+    return url;
+  }
+  krpano.customParseTilePath = function(path, cubeside, level, h, v, stereo, image)
+  {
+				if (image.maptype == "wiki")
+			{
+				// WikiMaps tile placeholders
+				path = path.split("${x}").join(1*h-1);
+				path = path.split("${y}").join(1*v-1);
+				path = path.split("${z}").join(1*level+1);
+			}
+			else if (image.maptype == "osm")
+			{
+				// OpenStreetMap tile placeholders
+				path = path.split("{s}").join( "abc"[(Math.random()*2.9)|0] );
+				path = path.split("{x}").join(1*h-1);
+				path = path.split("{y}").join(1*v-1);
+				path = path.split("{z}").join(1*level+1);
+			}
+			else if (image.maptype == "basemap_at")
+			{
+				// Basemap.at
+				path = path.split("{s}").join( ["","1","2","3","4"][(Math.random()*4.9)|0] );
+				path = path.split("{x}").join(1*h-1);
+				path = path.split("{y}").join(1*v-1);
+				path = path.split("{z}").join(1*level+1+1+1+1);
+			}
+			
+			return path;
+    }
+]]></action>
+	
+	<scene name="er" title="Entrance" onstart="" thumburl="panos/IMG_1191-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="3.51" vlookat="1.00" fovtype="MFOV" fov="87.26" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_1191-HDR_Panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/IMG_1191-HDR_Panorama.tiles/pano_%s.jpg" if="browser.domain != 'krpano.com'" />
+			<cube url="https://krpano.com/tours/apartment/panos/IMG_1191-HDR_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" if="browser.domain == 'krpano.com'" />
+		</image>
+		
+		<hotspot name="hs56313" style="roomspot|skin_tooltips" tooltip="get:scene[lr].title" onclick="goto(lr);">
+			<point ath="-31.167381" atv="-26.721998" />
+			<point ath="1.439101" atv="-30.402683" />
+			<point ath="1.877027" atv="43.226524" />
+			<point ath="-31.571499" atv="37.882914" />
+		</hotspot>
+
+		<hotspot name="hs67430" style="roomspot|skin_tooltips" tooltip="get:scene[br].title" onclick="goto(br);">
+			<point ath="15.391209" atv="-29.691606" />
+			<point ath="43.163056" atv="-23.721507" />
+			<point ath="43.016534" atv="34.475145" />
+			<point ath="14.782883" atv="41.876437" />
+		</hotspot>
+
+		<hotspot name="hs80676" style="roomspot|skin_tooltips" tooltip="get:scene[bath].title" onclick="goto(bath);">
+			<point ath="68.855089" atv="-37.711881" />
+			<point ath="116.794632" atv="-36.621807" />
+			<point ath="117.224658" atv="48.806381" />
+			<point ath="68.070913" atv="50.516866" />
+		</hotspot>
+
+		<hotspot name="hs95571" style="roomspot|skin_tooltips" tooltip="Entrance door" handcursor="false">
+			<point ath="172.034124" atv="-27.766743" />
+			<point ath="-152.026406" atv="-25.592335" />
+			<point ath="-151.713607" atv="36.643290" />
+			<point ath="172.254031" atv="40.027150" />
+		</hotspot>
+
+		<hotspot name="hs103435" style="roomspot|skin_tooltips" tooltip="get:scene[sr].title" onclick="goto(sr);">
+			<point ath="-146.431271" atv="-25.460974" />
+			<point ath="-118.985759" atv="-37.332541" />
+			<point ath="-119.180323" atv="50.211151" />
+			<point ath="-146.644317" atv="37.202453" />
+		</hotspot>
+
+	</scene>
+	
+	
+	<scene name="lr" title="Livingroom / Kitchen" onstart="" thumburl="panos/IMG_1215-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-2.48" vlookat="3.10" fovtype="MFOV" fov="87.15" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_1215-HDR_Panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/IMG_1215-HDR_Panorama.tiles/pano_%s.jpg" if="browser.domain != 'krpano.com'" />
+			<cube url="https://krpano.com/tours/apartment/panos/IMG_1215-HDR_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" if="browser.domain == 'krpano.com'" />
+		</image>
+		
+		<hotspot name="hs146786" style="roomspot|skin_tooltips" tooltip="get:scene[tr].title" onclick="goto(tr);">
+			<point ath="-24.077052" atv="-16.641598" />
+			<point ath="-23.595192" atv="22.487035" />
+			<point ath="-4.096264" atv="24.274531" />
+			<point ath="-3.876482" atv="-18.161416" />
+			<point ath="-12.176833" atv="-17.662225" />
+		</hotspot>
+
+		<hotspot name="hs6202" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
+			<point ath="132.100108" atv="-16.669309" />
+			<point ath="147.677890" atv="-20.364759" />
+			<point ath="147.763296" atv="28.482291" />
+			<point ath="132.572157" atv="24.618429" />
+		</hotspot>
+
+	</scene>
+	
+	
+	<scene name="tr" title="Terrace" onstart="" thumburl="panos/IMG_1236-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.54" vlookat="2.79" fovtype="MFOV" fov="87.10" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_1236-HDR_Panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/IMG_1236-HDR_Panorama.tiles/pano_%s.jpg" if="browser.domain != 'krpano.com'" />
+			<cube url="https://krpano.com/tours/apartment/panos/IMG_1236-HDR_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" if="browser.domain == 'krpano.com'" />
+		</image>
+		
+		<hotspot name="hs48248" style="roomspot|skin_tooltips" tooltip="get:scene[lr].title" onclick="goto(lr);">
+			<point ath="179.233252" atv="-31.366280" />
+			<point ath="-145.115805" atv="-26.688148" />
+			<point ath="-145.961429" atv="34.034642" />
+			<point ath="178.343236" atv="37.543856" />
+		</hotspot>
+
+	</scene>
+	
+
+	<scene name="br" title="Bedroom" onstart="" thumburl="panos/IMG_1203-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-3.49" vlookat="-0.62" fovtype="MFOV" fov="87.26" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/IMG_1203-HDR_Panorama.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/IMG_1203-HDR_Panorama.tiles/pano_%s.jpg" if="browser.domain != 'krpano.com'" />
+			<cube url="https://krpano.com/tours/apartment/panos/IMG_1203-HDR_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" if="browser.domain == 'krpano.com'" />
+		</image>
+		
+		<hotspot name="hs132874" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
+			<point ath="-167.574801" atv="-21.029911" />
+			<point ath="-147.094672" atv="-18.314325" />
+			<point ath="-148.095235" atv="27.230035" />
+			<point ath="-167.220179" atv="30.570128" />
+		</hotspot>
+
+	</scene>
+
+
+	<scene name="sr" title="Storage room" onstart="" thumburl="panos/IMG_1228_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.54" vlookat="4.49" fovtype="MFOV" fov="87.09" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<krpano if="browser.domain != 'krpano.com'">
+			<preview url="panos/IMG_1228_Panorama.tiles/preview.jpg" />
+			<image>
+				<cube url="panos/IMG_1228_Panorama.tiles/pano_%s.jpg"  />
+			</image>
+		</krpano>
+		
+		<krpano if="browser.domain == 'krpano.com'">
+			<preview url="https://krpano.com/tours/apartment/panos/IMG_1228_Panorama.tiles/preview.jpg" />
+			<image prealign="0|-90|0">
+				<cube url="https://krpano.com/tours/apartment/panos/IMG_1228_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" />
+			</image>
+		</krpano>
+		
+		<hotspot name="hs19218" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
+			<point ath="calc:132-90" atv="-31.574721" />
+			<point ath="calc:-140-90" atv="-21.417162" />
+			<point ath="calc:-140-90" atv="30.115696" />
+			<point ath="calc:133-90" atv="44.829453" />
+		</hotspot>
+
+	</scene>
+
+	<scene name="bath" title="Bathroom" onstart="" thumburl="panos/IMG_1232_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-79.51" vlookat="17.02" fovtype="MFOV" fov="87.20" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<krpano if="browser.domain != 'krpano.com'">
+			<preview url="panos/IMG_1232_Panorama.tiles/preview.jpg" />
+			<image>
+				<cube url="panos/IMG_1232_Panorama.tiles/pano_%s.jpg"  />
+			</image>
+		</krpano>
+		
+		<krpano if="browser.domain == 'krpano.com'">
+			<preview url="https://krpano.com/tours/apartment/panos/IMG_1232_Panorama.tiles/preview.jpg" />
+			<image prealign="0|+90|0">
+				<cube url="https://krpano.com/tours/apartment/panos/IMG_1232_Panorama.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664,3328" />
+			</image>
+		</krpano>
+		
+		<hotspot name="hs32595" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
+			<point ath="calc:170+90" atv="-10.315197" />
+			<point ath="calc:-140+90" atv="-11.452860" />
+			<point ath="calc:-140+90" atv="34.093003" />
+			<point ath="calc:170+90" atv="35.363875" />
+		</hotspot>
+
+	</scene>
+
 </krpano>

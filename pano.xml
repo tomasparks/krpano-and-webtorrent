@@ -259,8 +259,8 @@
   }
   krpano.customParseTilePath = function(path, cubeside, level, h, v, stereo, image)
   {
-      console.log('path, cubeside, level, h, v, stereo, image: ',path, cubeside, level, h, v, stereo, image);
-				if (image.maptype == "wiki")
+      console.log('path: ', path,' cubeside: ',cubeside, ' level:', level, h, v, stereo, image: ');
+	/*			if (image.maptype == "wiki")
 			{
 				// WikiMaps tile placeholders
 				path = path.split("${x}").join(1*h-1);
@@ -282,9 +282,9 @@
 				path = path.split("{x}").join(1*h-1);
 				path = path.split("{y}").join(1*v-1);
 				path = path.split("{z}").join(1*level+1+1+1+1);
-			}
+			}*/
 			
-			return url;
+			return path;
     }
 ]]></action>
 	

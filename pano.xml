@@ -245,13 +245,12 @@
     
     // load 'image2.jpg' instead of 'image1.jpg':
    // if(url == "image1.jpg") url = "image2.jpg";
-    
+    if(url.includes(".torrent")) {tmp = "./tours/";url = tmp.concat(url);}
     return url;
   }
   krpano.customParseTilePath = function(path, cubeside, level, h, v, stereo, image)
   {
-      console.log('url: ',url);
-    log('url: '+url);
+      console.log('path, cubeside, level, h, v, stereo, image: ',path, cubeside, level, h, v, stereo, image);
 				if (image.maptype == "wiki")
 			{
 				// WikiMaps tile placeholders
@@ -276,7 +275,7 @@
 				path = path.split("{z}").join(1*level+1+1+1+1);
 			}
 			
-			return path;
+			return url;
     }
 ]]></action>
 	

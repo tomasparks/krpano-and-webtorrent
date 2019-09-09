@@ -259,7 +259,13 @@
   }
   krpano.customParseTilePath = function(path, cubeside, level, h, v, stereo, image)
   {
-      console.log('path: ', path,' cubeside: ',cubeside, ' level:', level, h, v, stereo, image: );
+      console.log('path: ', path,
+                ' cubeside: ',cubeside,
+                ' level:', level,
+                 h,
+                  v,
+                   stereo,
+                    image );
 	/*			if (image.maptype == "wiki")
 			{
 				// WikiMaps tile placeholders

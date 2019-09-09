@@ -253,6 +253,7 @@
     
        console.log('returning url: ',url);
     log('returning url: '+url); 
+    log('<img src="'+url+'" />');     
     
     return url;
   }

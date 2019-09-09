@@ -246,9 +246,9 @@
     // load 'image2.jpg' instead of 'image1.jpg':
    // if(url == "image1.jpg") url = "image2.jpg";
     if(url.includes(".torrent")) {
-    url.replace(".torrent", "");
-    tmp = "./tours/";
-    url = tmp.concat(url);}
+    var url = url.replace(".torrent", "");
+   var tmp = "./tours/";
+   var url = tmp.concat(url);}
     
     
        console.log('returning url: ',url);

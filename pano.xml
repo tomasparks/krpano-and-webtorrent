@@ -240,12 +240,17 @@
 <action type="Javascript" autorun="preinit"><![CDATA[
   krpano.customParsePath = function(url)
   {
-    console.log('url: ',url);
-    log('url: '+url);
+    console.log('got url: ',url);
+    log('got url: '+url);
     
     // load 'image2.jpg' instead of 'image1.jpg':
    // if(url == "image1.jpg") url = "image2.jpg";
     if(url.includes(".torrent")) {tmp = "./tours/";url = tmp.concat(url);}
+    
+    
+       console.log('returning url: ',url);
+    log('returning url: '+url); 
+    
     return url;
   }
   krpano.customParseTilePath = function(path, cubeside, level, h, v, stereo, image)

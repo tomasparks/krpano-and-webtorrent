@@ -10,9 +10,6 @@
       var $uploadSpeed = document.querySelector('#uploadSpeed')
       var $downloadSpeed = document.querySelector('#downloadSpeed')
       
-//     var firstLoop = true;
-//     var wait = false; 
-
 
 
    
@@ -33,140 +30,16 @@ var client = new WebTorrent()
         setInterval(onProgress, 500)
         onProgress()
                 
-        function start() {
-              console.log('start():\n firstLoop: '+firstLoop+' krpano: '+krpano);
-              if (krpano) {
-                console.log('start(): krpano ready');  
-                console.log('start(): panodata: ')
-		       console.log(panodata);
-		        if (panodata) {		      
-		                firstscene = panodata['firstscene'];
-		                console.log('start(): '+firstscene);
-		                // pano = panodata['scenes'] with 'id' = firstscene
-		                //fLen = panodata.scenes.length;
-		                //for (i = 1 to len(panodata.scenes)) {
-		                //for (i = 0; i < fLen; i++) {
-		                //   if {panodata.scenes[i]id == firstscene) {pano = panodata.scenes[i];break}
-		                //}
-		                var xmlcount = document.querySelector('.xml').childElementCount;
-		                console.log(xmlcount);
-		                if (xmlcount == 0 && !wait) {
-		                    panodata.scenes.forEach(function (scene) {
-		                        if (scene.id ==firstscene) {
-		                            console.log(scene.id+'=='+firstscene); pano=scene; console.log(pano);files=scene.files;
-		                            BlobUrlFromUrl(files.preview, rootUrl, 'preview')
-		                            BlobUrlFromUrl(files.left, rootUrl,'left')
-                                    BlobUrlFromUrl(files.front, rootUrl,'front')
-                                    BlobUrlFromUrl(files.right, rootUrl,'right')
-                                    BlobUrlFromUrl(files.back, rootUrl,'back')
-                                    BlobUrlFromUrl(files.up, rootUrl,'up')
-                                    BlobUrlFromUrl(files.down, rootUrl,'down')
-                                    wait = true;
-                                }
-                       })
-                       }
-                       if (xmlcount >=1) {
-                            panodata.scenes.forEach(function (scene) {if (scene.id ==firstscene){
-		                        console.log(scene.id+'=='+firstscene); pano=scene;
-		                        var el = document.querySelector('.xml');
-                                var xmlstring = '﻿<krpano><scene id="' + pano.id + '" title="' + pano.title + '" >'
-                                xmlstring = xmlstring + el.innerHTML;
-                                xmlstring = xmlstring + '</scene></krpano>';
-                                console.log(xmlstring);
-                                
-                                //krpano.call("loadxml("+escape(xml)+",REMOVESCENES);")
-                                
-                               krpano.call("loadxml(" + escape(xmlstring) + ", null, MERGE, BLEND(0.5));");
-                               console.log('krpano.call("loadxml(" + escape(xmlstring) + ", null, MERGE, BLEND(0.5));");');
-	                            firstLoop = false;}});}
-	                            wait = true;
-		            }
-		      }
-		      }
-        
-function BlobUrlFromUrl(url,rootUrl, type) {
-    torrent.files.forEach(function (file) {
-        if ((file.path) == (rootUrl+'/'+url)) {
-        switch(type) {
-             case 'preview':
-                file.getBlobURL(function (err, burl, type) {
-                if (err) return log(err.message);
-                log('preview bloburl: '+burl+'<br /><img src="'+burl+'" />');
-                var link = document.createElement('preview');
-                link.setAttribute('src', burl);
-               // document.querySelector('.xml').appendChild(link);
-                });
-                break;
-         /*   case 'left':
-                file.getBlobURL(function (err, burl, type) {
-                if (err) return log(err.message);
-                log('left bloburl:'+burl);
-                var link = image.createElement('left');
-                link.setAttribute('src', burl);
-                document.querySelector("image > .xml").appendChild(link);
-                });
-                break;
-                case 'right':
-                file.getBlobURL(function (err, burl, type) {
-                if (err) return log(err.message);
-                log('right bloburl:'+burl);
-                var link = document.createElement('right');
-                link.setAttribute('src', burl);
-                document.querySelector('.xml').appendChild(link);
-                });
-                break;
-                case 'up':
-                file.getBlobURL(function (err, burl, type) {
-                if (err) return log(err.message);
-                log('up bloburl:'+burl);
-                var link = document.createElement('up');
-                link.setAttribute('src', burl);
-                document.querySelector('.xml').appendChild(link);
-                });
-                break;
-                                case 'down':
-                file.getBlobURL(function (err, burl, type) {
-                if (err) return log(err.message);
-                log('down bloburl:'+burl);
-                var link = document.createElement('down');
-                link.setAttribute('src', burl);
-                document.querySelector('.xml').appendChild(link);
-                });
-                break;
-                                                case 'front':
-                file.getBlobURL(function (err, burl, type) {
-                if (err) return log(err.message);
-                log('front bloburl:'+burl);
-                var link = document.createElement('front');
-                link.setAttribute('src', burl);
-                document.querySelector('.xml').appendChild(link);
-                });
-                break;
-                                                case 'back':
-                file.getBlobURL(function (err, burl, type) {
-                if (err) return log(err.message);
-                log('back bloburl:'+burl);
-                var link = document.createElement('back');
-                link.setAttribute('src', burl);
-                document.querySelector('.xml').appendChild(link);
-                });
-                break; */
-        }
-           }
-        })
-}
-//                 file.getBlobURL(function (err, url) {
-  //                      if (err) throw err
-    //                    console.log(rootUrl+'/'+url+' == '+url);
-      //                  return url;
-
+   
+var promise1 = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    resolve('foo');
+  }, 300);
+});
 
            
         // Statistics
-        function onProgress () {
-//           if (firstLoop) {start();}
-          // log('xml count: '+document.querySelector('.xml').childElementCount);
-            
+        function onProgress () {         
           // Peers
           $numPeers.innerHTML = torrent.numPeers + (torrent.numPeers === 1 ? ' peer' : ' peers')
 

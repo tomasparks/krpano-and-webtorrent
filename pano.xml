@@ -243,8 +243,6 @@
     console.log('got url: ',url);
     log('got url: '+url);
     
-    // load 'image2.jpg' instead of 'image1.jpg':
-   // if(url == "image1.jpg") url = "image2.jpg";
     if(url.includes(".torrent")) {
     var url = url.replace(".torrent", "");
    var tmp = "./tours/";

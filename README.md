@@ -1,6 +1,6 @@
 # krpano-and-webtorrent
 
-NOTE: krpano is comercial software
+NOTE: [krpano](https://krpano.com/) is comercial software
 
 ## to-do
 * convert into [krpano plugin](https://krpano.com/docu/plugininterface/)

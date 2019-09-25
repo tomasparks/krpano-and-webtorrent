@@ -31,11 +31,14 @@ var client = new WebTorrent()
         onProgress()
                 
    
-var promise1 = new Promise(function(resolve, reject) {
-  setTimeout(function() {
-    resolve('foo');
-  }, 300);
-});
+file.getBlobURL(function (err, url) {
+  if (err) throw err
+  var a = document.createElement('a')
+  a.download = file.name
+  a.href = url
+  a.textContent = 'Download ' + file.name
+  document.body.appendChild(a)
+})
 
            
         // Statistics

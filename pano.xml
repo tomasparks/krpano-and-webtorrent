@@ -81,14 +81,14 @@
 
 
 	
-	<scene name="er" title="Entrance" onstart="" thumburl="apartment.torrent/images/IMG_1191-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="er" title="Entrance" onstart="" thumburl="torrent://images/IMG_1191-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="3.51" vlookat="1.00" fovtype="MFOV" fov="87.26" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="apartment.torrent/images/IMG_1191-HDR_Panorama.tiles/preview.jpg" />
+		<preview url="torrent://images/IMG_1191-HDR_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="apartment.torrent/images/IMG_1191-HDR_Panorama.tiles/pano_%s.jpg" />
+			<cube url="torrent://images/IMG_1191-HDR_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs56313" style="roomspot|skin_tooltips" tooltip="get:scene[lr].title" onclick="goto(lr);">
@@ -129,14 +129,14 @@
 	</scene>
 	
 	
-	<scene name="lr" title="Livingroom / Kitchen" onstart="" thumburl="apartment.torrent/images/IMG_1215-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="lr" title="Livingroom / Kitchen" onstart="" thumburl="torrent://images/IMG_1215-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="-2.48" vlookat="3.10" fovtype="MFOV" fov="87.15" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="apartment.torrent/images/IMG_1215-HDR_Panorama.tiles/preview.jpg" />
+		<preview url="torrent://images/IMG_1215-HDR_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="apartment.torrent/images/IMG_1215-HDR_Panorama.tiles/pano_%s.jpg" />
+			<cube url="torrent://images/IMG_1215-HDR_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs146786" style="roomspot|skin_tooltips" tooltip="get:scene[tr].title" onclick="goto(tr);">
@@ -157,14 +157,14 @@
 	</scene>
 	
 	
-	<scene name="tr" title="Terrace" onstart="" thumburl="apartment.torrent/images/IMG_1236-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="tr" title="Terrace" onstart="" thumburl="torrent://images/IMG_1236-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.54" vlookat="2.79" fovtype="MFOV" fov="87.10" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="apartment.torrent/images/IMG_1236-HDR_Panorama.tiles/preview.jpg" />
+		<preview url="torrent://images/IMG_1236-HDR_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="apartment.torrent/images/IMG_1236-HDR_Panorama.tiles/pano_%s.jpg" />
+			<cube url="torrent://images/IMG_1236-HDR_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs48248" style="roomspot|skin_tooltips" tooltip="get:scene[lr].title" onclick="goto(lr);">
@@ -177,14 +177,14 @@
 	</scene>
 	
 
-	<scene name="br" title="Bedroom" onstart="" thumburl="apartment.torrent/images/IMG_1203-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="br" title="Bedroom" onstart="" thumburl="torrent://images/IMG_1203-HDR_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="-3.49" vlookat="-0.62" fovtype="MFOV" fov="87.26" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="apartment.torrent/images/IMG_1203-HDR_Panorama.tiles/preview.jpg" />
+		<preview url="torrent://images/IMG_1203-HDR_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="apartment.torrent/images/IMG_1203-HDR_Panorama.tiles/pano_%s.jpg" />
+			<cube url="torrent://images/IMG_1203-HDR_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs132874" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
@@ -197,14 +197,14 @@
 	</scene>
 
 
-	<scene name="sr" title="Storage room" onstart="" thumburl="apartment.torrent/images/IMG_1228_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="sr" title="Storage room" onstart="" thumburl="torrent://images/IMG_1228_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0.54" vlookat="4.49" fovtype="MFOV" fov="87.09" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="apartment.torrent/images/IMG_1228_Panorama.tiles/preview.jpg" />
+		<preview url="torrent://images/IMG_1228_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="apartment.torrent/images/IMG_1228_Panorama.tiles/pano_%s.jpg" />
+			<cube url="torrent://images/IMG_1228_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs19218" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
@@ -216,14 +216,14 @@
 
 	</scene>
 
-	<scene name="bath" title="Bathroom" onstart="" thumburl="apartment.torrent/images/IMG_1232_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="bath" title="Bathroom" onstart="" thumburl="torrent://images/IMG_1232_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="-79.51" vlookat="17.02" fovtype="MFOV" fov="87.20" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="apartment.torrent/images/IMG_1232_Panorama.tiles/preview.jpg" />
+		<preview url="torrent://images/IMG_1232_Panorama.tiles/preview.jpg" />
 
 		<image>
-			<cube url="apartment.torrent/images/IMG_1232_Panorama.tiles/pano_%s.jpg" />
+			<cube url="torrent://images/IMG_1232_Panorama.tiles/pano_%s.jpg" />
 		</image>
 		
 		<hotspot name="hs32595" style="roomspot|skin_tooltips" tooltip="get:scene[er].title" onclick="goto(er);">
@@ -243,10 +243,8 @@
     console.log('got url: ',url);
     log('got url: '+url);
     
-    if(url.includes(".torrent")) {
-    var url = url.replace(".torrent", "");
-   var tmp = "./tours/";
-   var url = tmp.concat(url);}
+    if(url.includes("torrent://")) {
+    var url = url.replace("torrent://", "");}
     
     
        console.log('returning url: ',url);

@@ -10,6 +10,9 @@ function krpanoplugin()
     var plugin = null;
 
     var xml_value = 100.0;   // the value for a custom xml attribute
+        var metalink_hash = "";
+    var torrent_URL = "";
+    var WebTorrent = require('webtorrent');
 
     // registerplugin - startup point for the plugin (required)
     // - krpanointerface = krpano interface object
